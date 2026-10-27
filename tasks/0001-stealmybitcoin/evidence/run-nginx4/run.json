@@ -1,0 +1,192 @@
+{
+  "target": "http://127.0.0.1:8080/php-version.php",
+  "started_utc": "2026-10-26T10:29:21.182197+00:00",
+  "stage_order": [
+    "health",
+    "heap",
+    "code",
+    "final"
+  ],
+  "consumer_count": 8,
+  "output_dir": "/out/run-nginx4",
+  "heap": {
+    "stage": "heap",
+    "producer": {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 476,
+      "body_sha256": "387ad4edcf838fa7d72f42920e7761162496e3a7c0f50eb9e3b7046e72f3e2e6",
+      "oom": true,
+      "cookie_bytes": 0
+    },
+    "consumers": [
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 701,
+        "body_sha256": "f1778265c95ca27b87e33f4aecf6f4b6dbfe4f48dd5eebdb4af81102db7f2e7e",
+        "oom": false,
+        "cookie_bytes": 256
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      }
+    ],
+    "candidate_addresses": [
+      "0x783213000000"
+    ],
+    "request_sha256": "97b0ba61e39f216514490b430bf232272d2991cf3361820c7b0f8a2f6b82960a",
+    "response_sha256": "c688e38af8d596219f43046b3eca4e37fb7428f553f5351374f400d5cdcfb6a2"
+  },
+  "code": {
+    "stage": "code",
+    "producer": {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 476,
+      "body_sha256": "387ad4edcf838fa7d72f42920e7761162496e3a7c0f50eb9e3b7046e72f3e2e6",
+      "oom": true,
+      "cookie_bytes": 0
+    },
+    "consumers": [
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 701,
+        "body_sha256": "738a356af2cbaec9d41b218bd2a6732e3b2d70a10c0ad2fd20b84ff223158b20",
+        "oom": false,
+        "cookie_bytes": 16
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      }
+    ],
+    "candidate_addresses": [
+      "0x5b5334112930"
+    ],
+    "request_sha256": "c8f6e56a427581da5c324e26f1104c9ab36c67dfa1f83444738c2cc91d381fb2",
+    "response_sha256": "90e9a4dad929f4d2eefe62ebd3c39da9232a1c7e66799239bcaf80d8d07f132d"
+  },
+  "final": {
+    "status": 200,
+    "nonce_seen": true,
+    "id_seen": true,
+    "binary_hash_seen": true,
+    "response_incomplete": false,
+    "execution_proof_verified": true,
+    "request_bytes": 368994,
+    "request_sha256": "57a480424b681fdb8e63d87b68146d9e7b5d3e9a76ed5eeeec73484ee909d615",
+    "response_bytes": 552,
+    "response_sha256": "f6ea20a17acc14f365179e7a21e93525cbf8767bc078ed9578fa013281aa4bd9",
+    "response_body_bytes": 332,
+    "response_body_sha256": "0abf54b04c5de67fe9bdb33db40cc6a5c4c062f220680e6677425ff627e2d6c5",
+    "response_path": "/out/run-nginx4/final.response.http"
+  },
+  "completed_utc": "2026-10-26T10:29:21.875556+00:00"
+}

@@ -1,0 +1,155 @@
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:14:11 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+
+1dc
+<br />
+<b>Warning</b>:  PHP Request Startup: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in <b>Unknown</b> on line <b>0</b><br />
+<br />
+<b>Warning</b>:  PHP Request Startup: Session cookie cannot be sent after headers have already been sent in <b>Unknown</b> on line <b>0</b><br />
+<br />
+<b>Fatal error</b>:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in <b>Unknown</b> on line <b>0</b><br />
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:14:11 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=52c489d67ec0dd7386150fb2a3a55bc7; path=/
+
+12
+PHP 8.4.26
+PID: 8
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:14:11 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=29bd710b63487ed6ca5d8c38ff3271b5; path=/
+
+12
+PHP 8.4.26
+PID: 8
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:14:11 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=6f303511db5370251bc09bfb4525bb66; path=/
+
+12
+PHP 8.4.26
+PID: 8
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:14:11 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=%10%00%00%00%00%00%00%000%29%11%E0%B9a%00%00; path=/
+
+2bd
+<br />
+<b>Warning</b>:  PHP Request Startup: Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, &quot;-&quot;, and &quot;,&quot; characters are allowed in <b>Unknown</b> on line <b>0</b><br />
+<br />
+<b>Warning</b>:  PHP Request Startup: Failed to read session data: files (path: ) in <b>Unknown</b> on line <b>0</b><br />
+<br />
+<b>Warning</b>:  PHP Request Startup: Failed to write session data (files). Please verify that the current setting of session.save_path is correct () in <b>Unknown</b> on line <b>0</b><br />
+<br />
+<b>Warning</b>:  Cannot modify header information - headers already sent in <b>/app/php-version.php</b> on line <b>4</b><br />
+PHP 8.4.26
+PID: 7
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:14:11 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=d081b3426ba2065e3091962326364c70; path=/
+
+12
+PHP 8.4.26
+PID: 6
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:14:11 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=56044c83289b3fd3d0a9f0072d77dcc6; path=/
+
+12
+PHP 8.4.26
+PID: 6
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:14:11 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=765f13be09429bd183ffdd983535e0a4; path=/
+
+12
+PHP 8.4.26
+PID: 6
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:14:11 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: close
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=a3c5bad15713a6159806efddaa4eb53a; path=/
+
+12
+PHP 8.4.26
+PID: 6
+
+0
+

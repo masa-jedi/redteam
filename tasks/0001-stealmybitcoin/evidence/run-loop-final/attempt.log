@@ -1,0 +1,5 @@
+[health] PHP 8.4.26 confirmed
+[heap] strict Zend base 0x7ea964c00000
+[code] strict zval_ptr_dtor 0x61b9e0112930
+{"stage": "final", "nonce": "27c3a0c37fe49e43", "execution_proof_verified": true, "response_path": "/out/run-loop-final/final.response.http"}
+exit=0

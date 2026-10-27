@@ -1,0 +1,4 @@
+services:
+  php:
+    environment:
+      PHP_CLI_SERVER_WORKERS: "1"

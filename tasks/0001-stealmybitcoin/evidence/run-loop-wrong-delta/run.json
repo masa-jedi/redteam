@@ -1,0 +1,14 @@
+{
+  "target": "http://127.0.0.1:8080/php-version.php",
+  "started_utc": "2026-10-27T09:11:52.959189+00:00",
+  "stage_order": [
+    "health",
+    "heap",
+    "code",
+    "final"
+  ],
+  "consumer_count": 8,
+  "output_dir": "/out/run-loop-wrong-delta",
+  "error": "RuntimeError: heap: expected one strict address, found 0",
+  "completed_utc": "2026-10-27T09:11:53.175584+00:00"
+}

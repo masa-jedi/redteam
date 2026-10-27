@@ -1,0 +1,147 @@
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:49:14 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+
+1dc
+<br />
+<b>Warning</b>:  PHP Request Startup: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in <b>Unknown</b> on line <b>0</b><br />
+<br />
+<b>Warning</b>:  PHP Request Startup: Session cookie cannot be sent after headers have already been sent in <b>Unknown</b> on line <b>0</b><br />
+<br />
+<b>Fatal error</b>:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in <b>Unknown</b> on line <b>0</b><br />
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:49:14 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=491b81552dd7d58ba96f4ac7f0ed54c5; path=/
+
+12
+PHP 8.4.26
+PID: 7
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:49:14 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=84e6377543b7dbe294e89f8773c373ba; path=/
+
+12
+PHP 8.4.26
+PID: 8
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:49:14 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=d0fc335b50d41aa65b2d202ad341704c; path=/
+
+12
+PHP 8.4.26
+PID: 8
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:49:14 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=0b9b9ebefac48c1fc93d4d9ef2f3ef0b; path=/
+
+12
+PHP 8.4.26
+PID: 8
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:49:14 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=1f641f118e09df4d354446f56c5b36fb; path=/
+
+12
+PHP 8.4.26
+PID: 8
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:49:14 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=713475ccbeaa131a85913adc11fc0604; path=/
+
+12
+PHP 8.4.26
+PID: 8
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:49:14 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=adf9b48d2b00cf5fa3e996e2e8dbd025; path=/
+
+12
+PHP 8.4.26
+PID: 8
+
+0
+
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Tue, 27 Oct 2026 09:49:14 GMT
+Content-Type: text/plain;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: close
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+Set-Cookie: PHPSESSID=0678038322846f9e405688c9cad8c52e; path=/
+
+12
+PHP 8.4.26
+PID: 8
+
+0
+

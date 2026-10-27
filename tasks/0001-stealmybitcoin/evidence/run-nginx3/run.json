@@ -1,0 +1,192 @@
+{
+  "target": "http://127.0.0.1:8080/php-version.php",
+  "started_utc": "2026-10-26T10:29:18.588245+00:00",
+  "stage_order": [
+    "health",
+    "heap",
+    "code",
+    "final"
+  ],
+  "consumer_count": 8,
+  "output_dir": "/out/run-nginx3",
+  "heap": {
+    "stage": "heap",
+    "producer": {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 476,
+      "body_sha256": "387ad4edcf838fa7d72f42920e7761162496e3a7c0f50eb9e3b7046e72f3e2e6",
+      "oom": true,
+      "cookie_bytes": 0
+    },
+    "consumers": [
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 701,
+        "body_sha256": "738a356af2cbaec9d41b218bd2a6732e3b2d70a10c0ad2fd20b84ff223158b20",
+        "oom": false,
+        "cookie_bytes": 256
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 701,
+        "body_sha256": "14d9e8b99d9489b714ff6afd25d6e6d032c5f5bd00b111abcedd8f2dea5cd558",
+        "oom": false,
+        "cookie_bytes": 256
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "51f1322926f7f934caef622189249bed548a1803b12250d074a3cc3d97720067",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "51f1322926f7f934caef622189249bed548a1803b12250d074a3cc3d97720067",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "51f1322926f7f934caef622189249bed548a1803b12250d074a3cc3d97720067",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      }
+    ],
+    "candidate_addresses": [
+      "0x783213000000"
+    ],
+    "request_sha256": "97b0ba61e39f216514490b430bf232272d2991cf3361820c7b0f8a2f6b82960a",
+    "response_sha256": "25b548c6ac8c49e00248710fdfe01fc5b75013f86afbe310b0fa2d6e229b064a"
+  },
+  "code": {
+    "stage": "code",
+    "producer": {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 476,
+      "body_sha256": "387ad4edcf838fa7d72f42920e7761162496e3a7c0f50eb9e3b7046e72f3e2e6",
+      "oom": true,
+      "cookie_bytes": 0
+    },
+    "consumers": [
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 701,
+        "body_sha256": "738a356af2cbaec9d41b218bd2a6732e3b2d70a10c0ad2fd20b84ff223158b20",
+        "oom": false,
+        "cookie_bytes": 16
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      }
+    ],
+    "candidate_addresses": [
+      "0x5b5334112930"
+    ],
+    "request_sha256": "c8f6e56a427581da5c324e26f1104c9ab36c67dfa1f83444738c2cc91d381fb2",
+    "response_sha256": "1cd89e361b9f19ec60a9c9d708ffc4509be935ad6b43c94810a09b518ef984ad"
+  },
+  "final": {
+    "status": 200,
+    "nonce_seen": false,
+    "id_seen": false,
+    "binary_hash_seen": false,
+    "response_incomplete": false,
+    "execution_proof_verified": false,
+    "request_bytes": 368994,
+    "request_sha256": "3394ca03c7aca541ae09bb8cb65a80999a5f08c98c22cb13067dd50d6b24409c",
+    "response_bytes": 370,
+    "response_sha256": "58c4f274fb0c4df960ad8af99be59cac16121261ac7270e81521ae022c079b02",
+    "response_body_bytes": 151,
+    "response_body_sha256": "b5536eeb125a9d3311a6e120c9d0fcc325c91f350d61df10e74f93c8b0c1e14f",
+    "response_path": "/out/run-nginx3/final.response.http"
+  },
+  "completed_utc": "2026-10-26T10:29:19.247716+00:00"
+}

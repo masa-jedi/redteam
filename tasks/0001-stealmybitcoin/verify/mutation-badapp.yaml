@@ -1,0 +1,4 @@
+services:
+  php:
+    volumes:
+      - ../verify/bad-php-version.php:/app/php-version.php:ro

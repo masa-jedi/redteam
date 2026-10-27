@@ -1,0 +1,4 @@
+NAME                  IMAGE                     COMMAND                  SERVICE     CREATED              STATUS                            PORTS
+task001-nginx-1       task001-nginx:local       "nginx -g 'daemon of…"   nginx       About a minute ago   Up About a minute (healthy)       80/tcp
+task001-php-1         task001-php:local         "docker-php-entrypoi…"   php         2 minutes ago        Exited (139) About a minute ago   
+task001-telemetry-1   task001-telemetry:local   "tcpdump -i any -s 0…"   telemetry   About a minute ago   Exited (0) 15 seconds ago         

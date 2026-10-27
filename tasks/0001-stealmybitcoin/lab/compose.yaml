@@ -1,0 +1,92 @@
+name: task001
+
+services:
+  php:
+    build:
+      context: ./php
+    image: task001-php:local
+    user: "0:0"
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 128
+    mem_limit: 1g
+    environment:
+      PHP_CLI_SERVER_WORKERS: "4"
+    networks:
+      - lab
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8000/php-version.php | grep -q 'PHP 8.4.26'"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+
+  nginx:
+    build:
+      context: ./nginx
+    image: task001-nginx:local
+    user: "101:101"
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 64
+    mem_limit: 128m
+    entrypoint: ["nginx", "-g", "daemon off;"]
+    depends_on:
+      php:
+        condition: service_healthy
+    networks:
+      - lab
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8080/php-version.php | grep -q 'PHP 8.4.26'"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+
+  telemetry:
+    build:
+      context: ./telemetry
+    image: task001-telemetry:local
+    network_mode: "service:nginx"
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - ../evidence:/evidence
+    depends_on:
+      nginx:
+        condition: service_healthy
+    command: ["-i", "any", "-s", "0", "-w", "/evidence/lab.pcap"]
+
+  attacker:
+    image: python:3.12-alpine
+    network_mode: "service:nginx"
+    user: "${LAB_UID:-1003}:${LAB_GID:-1003}"
+    volumes:
+      - ../specimen:/specimen:ro
+      - ./probe.py:/probe.py:ro
+      - ../verify:/verify:ro
+      - ../evidence:/out
+    depends_on:
+      nginx:
+        condition: service_healthy
+    working_dir: /out
+    entrypoint: ["python"]
+    command:
+      - /specimen/stealmybitcoin_poc.py
+      - --url
+      - http://127.0.0.1:8080/php-version.php
+      - --output-dir
+      - /out/run-${RUN_ID:-manual}
+
+networks:
+  lab:
+    internal: true

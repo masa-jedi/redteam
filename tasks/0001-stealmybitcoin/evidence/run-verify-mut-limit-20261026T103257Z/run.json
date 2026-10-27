@@ -1,0 +1,192 @@
+{
+  "target": "http://127.0.0.1:8080/php-version.php",
+  "started_utc": "2026-10-26T10:33:22.243143+00:00",
+  "stage_order": [
+    "health",
+    "heap",
+    "code",
+    "final"
+  ],
+  "consumer_count": 8,
+  "output_dir": "/out/run-verify-mut-limit-20261026T103257Z",
+  "heap": {
+    "stage": "heap",
+    "producer": {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 476,
+      "body_sha256": "387ad4edcf838fa7d72f42920e7761162496e3a7c0f50eb9e3b7046e72f3e2e6",
+      "oom": true,
+      "cookie_bytes": 0
+    },
+    "consumers": [
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 701,
+        "body_sha256": "738a356af2cbaec9d41b218bd2a6732e3b2d70a10c0ad2fd20b84ff223158b20",
+        "oom": false,
+        "cookie_bytes": 256
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "51f1322926f7f934caef622189249bed548a1803b12250d074a3cc3d97720067",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 19,
+        "body_sha256": "b4f889ee889e5bd9d00e7c6473918e0cb75e5105b885ba58473a29eff92db33f",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 19,
+        "body_sha256": "b4f889ee889e5bd9d00e7c6473918e0cb75e5105b885ba58473a29eff92db33f",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 19,
+        "body_sha256": "b4f889ee889e5bd9d00e7c6473918e0cb75e5105b885ba58473a29eff92db33f",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 19,
+        "body_sha256": "b4f889ee889e5bd9d00e7c6473918e0cb75e5105b885ba58473a29eff92db33f",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 19,
+        "body_sha256": "b4f889ee889e5bd9d00e7c6473918e0cb75e5105b885ba58473a29eff92db33f",
+        "oom": false,
+        "cookie_bytes": 32
+      }
+    ],
+    "candidate_addresses": [
+      "0x70d70a000000"
+    ],
+    "request_sha256": "97b0ba61e39f216514490b430bf232272d2991cf3361820c7b0f8a2f6b82960a",
+    "response_sha256": "a3848c319c3c68db4d8e95b94571bd093af321553e2cbd432e85b62cda924657"
+  },
+  "code": {
+    "stage": "code",
+    "producer": {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 476,
+      "body_sha256": "387ad4edcf838fa7d72f42920e7761162496e3a7c0f50eb9e3b7046e72f3e2e6",
+      "oom": true,
+      "cookie_bytes": 0
+    },
+    "consumers": [
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 19,
+        "body_sha256": "b4f889ee889e5bd9d00e7c6473918e0cb75e5105b885ba58473a29eff92db33f",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 19,
+        "body_sha256": "b4f889ee889e5bd9d00e7c6473918e0cb75e5105b885ba58473a29eff92db33f",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 19,
+        "body_sha256": "b4f889ee889e5bd9d00e7c6473918e0cb75e5105b885ba58473a29eff92db33f",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 19,
+        "body_sha256": "b4f889ee889e5bd9d00e7c6473918e0cb75e5105b885ba58473a29eff92db33f",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 701,
+        "body_sha256": "f1778265c95ca27b87e33f4aecf6f4b6dbfe4f48dd5eebdb4af81102db7f2e7e",
+        "oom": false,
+        "cookie_bytes": 16
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      }
+    ],
+    "candidate_addresses": [
+      "0x6273e2d12930"
+    ],
+    "request_sha256": "c8f6e56a427581da5c324e26f1104c9ab36c67dfa1f83444738c2cc91d381fb2",
+    "response_sha256": "067900b0bcb5ee4bac4c098fb589331e8b5c630d4aedf1e1bac2bbb5f719e27f"
+  },
+  "final": {
+    "status": 200,
+    "nonce_seen": false,
+    "id_seen": false,
+    "binary_hash_seen": false,
+    "response_incomplete": false,
+    "execution_proof_verified": false,
+    "request_bytes": 368994,
+    "request_sha256": "704866576a1cb9b72aecfdf873884ec0fff11970169c80be88a907e04f2a1d6d",
+    "response_bytes": 370,
+    "response_sha256": "159680d60905d1fa47b52f9f4a82e1878e485e9b0710d481bcd8710da4b3cd8b",
+    "response_body_bytes": 151,
+    "response_body_sha256": "b5536eeb125a9d3311a6e120c9d0fcc325c91f350d61df10e74f93c8b0c1e14f",
+    "response_path": "/out/run-verify-mut-limit-20261026T103257Z/final.response.http"
+  },
+  "completed_utc": "2026-10-26T10:33:22.905579+00:00"
+}

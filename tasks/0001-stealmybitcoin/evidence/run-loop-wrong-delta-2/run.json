@@ -1,0 +1,96 @@
+{
+  "target": "http://127.0.0.1:8080/php-version.php",
+  "started_utc": "2026-10-27T09:12:21.650527+00:00",
+  "stage_order": [
+    "health",
+    "heap",
+    "code",
+    "final"
+  ],
+  "consumer_count": 8,
+  "output_dir": "/out/run-loop-wrong-delta-2",
+  "heap": {
+    "stage": "heap",
+    "producer": {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 476,
+      "body_sha256": "387ad4edcf838fa7d72f42920e7761162496e3a7c0f50eb9e3b7046e72f3e2e6",
+      "oom": true,
+      "cookie_bytes": 0
+    },
+    "consumers": [
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 702,
+        "body_sha256": "7497a90ff9a8ebace70055cf65bb1315efd42ff9fc89fd0d3e21b18292e24d0c",
+        "oom": false,
+        "cookie_bytes": 256
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 19,
+        "body_sha256": "b4f889ee889e5bd9d00e7c6473918e0cb75e5105b885ba58473a29eff92db33f",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+        "oom": false,
+        "cookie_bytes": 32
+      }
+    ],
+    "candidate_addresses": [
+      "0x7c7bcca00000"
+    ],
+    "request_sha256": "97b0ba61e39f216514490b430bf232272d2991cf3361820c7b0f8a2f6b82960a",
+    "response_sha256": "e67943be9f8462e90a83392642b5a2988922230fcd6a9f84a480827f8ff12bff"
+  },
+  "error": "RuntimeError: code: expected one strict address, found 0",
+  "completed_utc": "2026-10-27T09:12:22.053722+00:00"
+}

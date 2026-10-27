@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Mon, 26 Oct 2026 10:28:58 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: close
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+
+97
+<br />
+<b>Fatal error</b>:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 131072 bytes) in <b>Unknown</b> on line <b>0</b><br />
+
+0
+

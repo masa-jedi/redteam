@@ -1,0 +1,12 @@
+independent oracle read at 2026-10-26T10:30:18Z
+image: sha256:f9b5ae80d9e8617ffeef3aa53a9b113f3ca12aa36931bdecdb31abcd2f138e71
+image /flag: FLAG{task001_php8426_lab_9f3c2a}
+image print-flag sha256: 475939146625902132d3507a85afee3a19483f2ebe9078370bc8f5911f0869bc
+source print-flag sha256: 475939146625902132d3507a85afee3a19483f2ebe9078370bc8f5911f0869bc
+final body nonce/uid/hash/flag:
+<br />
+<b>Fatal error</b>:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 131072 bytes) in <b>Unknown</b> on line <b>0</b><br />
+6c9f411478b49788
+uid=0(root) gid=0(root) groups=0(root)
+475939146625902132d3507a85afee3a19483f2ebe9078370bc8f5911f0869bc  /usr/local/bin/print-flag
+FLAG{task001_php8426_lab_9f3c2a}

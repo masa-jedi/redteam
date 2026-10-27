@@ -1,0 +1,345 @@
+php-1  | [6] [Mon Oct 26 10:28:27 2026] PHP 8.4.26 Development Server (http://0.0.0.0:8000) started
+php-1  | [7] [Mon Oct 26 10:28:27 2026] PHP 8.4.26 Development Server (http://0.0.0.0:8000) started
+php-1  | [1] [Mon Oct 26 10:28:27 2026] PHP 8.4.26 Development Server (http://0.0.0.0:8000) started
+php-1  | [9] [Mon Oct 26 10:28:27 2026] PHP 8.4.26 Development Server (http://0.0.0.0:8000) started
+php-1  | [8] [Mon Oct 26 10:28:27 2026] PHP 8.4.26 Development Server (http://0.0.0.0:8000) started
+php-1  | [6] [Mon Oct 26 10:28:29 2026] 127.0.0.1:48100 Accepted
+php-1  | [6] [Mon Oct 26 10:28:29 2026] 127.0.0.1:48100 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:29 2026] 127.0.0.1:48100 Closing
+php-1  | [6] [Mon Oct 26 10:28:31 2026] 127.0.0.1:48104 Accepted
+php-1  | [6] [Mon Oct 26 10:28:31 2026] 127.0.0.1:48104 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:31 2026] 127.0.0.1:48104 Closing
+php-1  | [6] [Mon Oct 26 10:28:34 2026] 127.0.0.1:52462 Accepted
+php-1  | [6] [Mon Oct 26 10:28:34 2026] 127.0.0.1:52462 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:34 2026] 127.0.0.1:52462 Closing
+php-1  | [6] [Mon Oct 26 10:28:36 2026] 127.0.0.1:52476 Accepted
+php-1  | [6] [Mon Oct 26 10:28:36 2026] 127.0.0.1:52476 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:36 2026] 127.0.0.1:52476 Closing
+php-1  | [6] [Mon Oct 26 10:28:38 2026] 127.0.0.1:52480 Accepted
+php-1  | [6] [Mon Oct 26 10:28:38 2026] 127.0.0.1:52480 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:38 2026] 127.0.0.1:52480 Closing
+php-1  | [6] [Mon Oct 26 10:28:40 2026] 127.0.0.1:52484 Accepted
+php-1  | [6] [Mon Oct 26 10:28:40 2026] 127.0.0.1:52484 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:40 2026] 127.0.0.1:52484 Closing
+php-1  | [6] [Mon Oct 26 10:28:42 2026] 127.0.0.1:59072 Accepted
+php-1  | [6] [Mon Oct 26 10:28:42 2026] 127.0.0.1:59072 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:42 2026] 127.0.0.1:59072 Closing
+php-1  | [8] [Mon Oct 26 10:28:42 2026] 172.22.0.3:58580 Accepted
+php-1  | [8] [Mon Oct 26 10:28:42 2026] 172.22.0.3:58580 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:28:42 2026] 172.22.0.3:58580 Closing
+php-1  | [9] [Mon Oct 26 10:28:44 2026] 127.0.0.1:59080 Accepted
+php-1  | [9] [Mon Oct 26 10:28:44 2026] 127.0.0.1:59080 [200]: GET /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:44 2026] 127.0.0.1:59080 Closing
+php-1  | [7] [Mon Oct 26 10:28:44 2026] 172.22.0.3:58588 Accepted
+php-1  | [7] [Mon Oct 26 10:28:44 2026] 172.22.0.3:58588 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:28:44 2026] 172.22.0.3:58588 Closing
+php-1  | [9] [Mon Oct 26 10:28:46 2026] 127.0.0.1:59092 Accepted
+php-1  | [9] [Mon Oct 26 10:28:46 2026] 127.0.0.1:59092 [200]: GET /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:46 2026] 127.0.0.1:59092 Closing
+php-1  | [7] [Mon Oct 26 10:28:46 2026] 172.22.0.3:58598 Accepted
+php-1  | [7] [Mon Oct 26 10:28:46 2026] 172.22.0.3:58598 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:28:46 2026] 172.22.0.3:58598 Closing
+php-1  | [1] [Mon Oct 26 10:28:46 2026] 172.22.0.3:58606 Accepted
+php-1  | [1] [Mon Oct 26 10:28:46 2026] 172.22.0.3:58606 [200]: GET /php-version.php
+php-1  | [1] [Mon Oct 26 10:28:46 2026] 172.22.0.3:58606 Closing
+php-1  | [1] [Mon Oct 26 10:28:48 2026] 127.0.0.1:59094 Accepted
+php-1  | [1] [Mon Oct 26 10:28:48 2026] 127.0.0.1:59094 [200]: GET /php-version.php
+php-1  | [1] [Mon Oct 26 10:28:48 2026] 127.0.0.1:59094 Closing
+php-1  | [6] [Mon Oct 26 10:28:48 2026] 172.22.0.3:58620 Accepted
+php-1  | [6] [Mon Oct 26 10:28:48 2026] 172.22.0.3:58620 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:48 2026] 172.22.0.3:58620 Closing
+php-1  | [7] [Mon Oct 26 10:28:50 2026] 127.0.0.1:59098 Accepted
+php-1  | [7] [Mon Oct 26 10:28:50 2026] 127.0.0.1:59098 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:28:50 2026] 127.0.0.1:59098 Closing
+php-1  | [8] [Mon Oct 26 10:28:50 2026] 172.22.0.3:58622 Accepted
+php-1  | [8] [Mon Oct 26 10:28:50 2026] 172.22.0.3:58622 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:28:50 2026] 172.22.0.3:58622 Closing
+php-1  | [6] [Mon Oct 26 10:28:52 2026] 172.22.0.3:34092 Accepted
+php-1  | [7] [Mon Oct 26 10:28:52 2026] 127.0.0.1:53034 Accepted
+php-1  | [7] [Mon Oct 26 10:28:52 2026] 127.0.0.1:53034 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:28:52 2026] 127.0.0.1:53034 Closing
+php-1  | [6] [Mon Oct 26 10:28:52 2026] 172.22.0.3:34092 Closing
+php-1  | [6] [Mon Oct 26 10:28:53 2026] 172.22.0.3:34106 Accepted
+php-1  | [6] [Mon Oct 26 10:28:53 2026] 172.22.0.3:34106 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:53 2026] 172.22.0.3:34106 Closing
+php-1  | [9] [Mon Oct 26 10:28:54 2026] 127.0.0.1:53046 Accepted
+php-1  | [9] [Mon Oct 26 10:28:54 2026] 127.0.0.1:53046 [200]: GET /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:54 2026] 127.0.0.1:53046 Closing
+php-1  | [7] [Mon Oct 26 10:28:55 2026] 172.22.0.3:34110 Accepted
+php-1  | [7] [Mon Oct 26 10:28:55 2026] 172.22.0.3:34110 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:28:55 2026] 172.22.0.3:34110 Closing
+php-1  | [1] [Mon Oct 26 10:28:56 2026] 127.0.0.1:53056 Accepted
+php-1  | [1] [Mon Oct 26 10:28:56 2026] 127.0.0.1:53056 [200]: GET /php-version.php
+php-1  | [1] [Mon Oct 26 10:28:56 2026] 127.0.0.1:53056 Closing
+php-1  | [6] [Mon Oct 26 10:28:57 2026] 172.22.0.3:34116 Accepted
+php-1  | [6] [Mon Oct 26 10:28:57 2026] 172.22.0.3:34116 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:57 2026] 172.22.0.3:34116 Closing
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34124 Accepted
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34124 [200]: GET /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34124 Closing
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34128 Accepted
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34128 Closing
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34140 Accepted
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34140 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34140 Closing
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34150 Accepted
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34150 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34150 Closing
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34164 Accepted
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34164 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34164 Closing
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34168 Accepted
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34168 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34168 Closing
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34182 Accepted
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34182 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34182 Closing
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34192 Accepted
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34192 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34192 Closing
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34198 Accepted
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34198 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34198 Closing
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34210 Accepted
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34210 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34210 Closing
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34222 Accepted
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34222 Closing
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34228 Accepted
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34228 [200]: POST /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34228 Closing
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34242 Accepted
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34242 [200]: POST /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34242 Closing
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34250 Accepted
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34250 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34250 Closing
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34258 Accepted
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34258 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34258 Closing
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34274 Accepted
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34274 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34274 Closing
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34286 Accepted
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34286 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34286 Closing
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34292 Accepted
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34292 [200]: POST /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34292 Closing
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34300 Accepted
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34300 [200]: POST /php-version.php
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34300 Closing
+php-1  | [6] [Mon Oct 26 10:28:58 2026] 172.22.0.3:34314 Accepted
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 127.0.0.1:53064 Accepted
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 127.0.0.1:53064 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:28:58 2026] 127.0.0.1:53064 Closing
+php-1  | [1] [Mon Oct 26 10:28:59 2026] 172.22.0.3:34328 Accepted
+php-1  | [1] [Mon Oct 26 10:28:59 2026] 172.22.0.3:34328 [200]: GET /php-version.php
+php-1  | [1] [Mon Oct 26 10:28:59 2026] 172.22.0.3:34328 Closing
+php-1  | [8] [Mon Oct 26 10:29:00 2026] 127.0.0.1:53074 Accepted
+php-1  | [8] [Mon Oct 26 10:29:00 2026] 127.0.0.1:53074 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:00 2026] 127.0.0.1:53074 Closing
+php-1  | [9] [Mon Oct 26 10:29:01 2026] 172.22.0.3:34334 Accepted
+php-1  | [9] [Mon Oct 26 10:29:01 2026] 172.22.0.3:34334 [200]: GET /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:01 2026] 172.22.0.3:34334 Closing
+php-1  | [7] [Mon Oct 26 10:29:02 2026] 127.0.0.1:42908 Accepted
+php-1  | [7] [Mon Oct 26 10:29:02 2026] 127.0.0.1:42908 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:02 2026] 127.0.0.1:42908 Closing
+php-1  | [9] [Mon Oct 26 10:29:03 2026] 172.22.0.3:42146 Accepted
+php-1  | [9] [Mon Oct 26 10:29:03 2026] 172.22.0.3:42146 [200]: GET /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:03 2026] 172.22.0.3:42146 Closing
+php-1  | [8] [Mon Oct 26 10:29:04 2026] 127.0.0.1:42910 Accepted
+php-1  | [8] [Mon Oct 26 10:29:04 2026] 127.0.0.1:42910 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:04 2026] 127.0.0.1:42910 Closing
+php-1  | [9] [Mon Oct 26 10:29:05 2026] 172.22.0.3:42158 Accepted
+php-1  | [9] [Mon Oct 26 10:29:05 2026] 172.22.0.3:42158 [200]: GET /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:05 2026] 172.22.0.3:42158 Closing
+php-1  | [8] [Mon Oct 26 10:29:06 2026] 127.0.0.1:42916 Accepted
+php-1  | [8] [Mon Oct 26 10:29:06 2026] 127.0.0.1:42916 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:06 2026] 127.0.0.1:42916 Closing
+php-1  | [9] [Mon Oct 26 10:29:07 2026] 172.22.0.3:42172 Accepted
+php-1  | [9] [Mon Oct 26 10:29:07 2026] 172.22.0.3:42172 [200]: GET /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:07 2026] 172.22.0.3:42172 Closing
+php-1  | [8] [Mon Oct 26 10:29:08 2026] 127.0.0.1:42928 Accepted
+php-1  | [8] [Mon Oct 26 10:29:08 2026] 127.0.0.1:42928 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:08 2026] 127.0.0.1:42928 Closing
+php-1  | [7] [Mon Oct 26 10:29:09 2026] 172.22.0.3:42184 Accepted
+php-1  | [7] [Mon Oct 26 10:29:09 2026] 172.22.0.3:42184 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:09 2026] 172.22.0.3:42184 Closing
+php-1  | [7] [Mon Oct 26 10:29:10 2026] 127.0.0.1:42934 Accepted
+php-1  | [7] [Mon Oct 26 10:29:10 2026] 127.0.0.1:42934 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:10 2026] 127.0.0.1:42934 Closing
+php-1  | [8] [Mon Oct 26 10:29:11 2026] 172.22.0.3:42190 Accepted
+php-1  | [8] [Mon Oct 26 10:29:11 2026] 172.22.0.3:42190 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:11 2026] 172.22.0.3:42190 Closing
+php-1  | [7] [Mon Oct 26 10:29:12 2026] 127.0.0.1:60868 Accepted
+php-1  | [7] [Mon Oct 26 10:29:12 2026] 127.0.0.1:60868 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:12 2026] 127.0.0.1:60868 Closing
+php-1  | [9] [Mon Oct 26 10:29:13 2026] 172.22.0.3:59172 Accepted
+php-1  | [9] [Mon Oct 26 10:29:13 2026] 172.22.0.3:59172 [200]: GET /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:13 2026] 172.22.0.3:59172 Closing
+php-1  | [7] [Mon Oct 26 10:29:14 2026] 127.0.0.1:60884 Accepted
+php-1  | [7] [Mon Oct 26 10:29:14 2026] 127.0.0.1:60884 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:14 2026] 127.0.0.1:60884 Closing
+php-1  | [9] [Mon Oct 26 10:29:15 2026] 172.22.0.3:59184 Accepted
+php-1  | [9] [Mon Oct 26 10:29:15 2026] 172.22.0.3:59184 [200]: GET /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:15 2026] 172.22.0.3:59184 Closing
+php-1  | [9] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59190 Accepted
+php-1  | [9] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59190 [200]: GET /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59190 Closing
+php-1  | [9] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59206 Accepted
+php-1  | [9] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59206 Closing
+php-1  | [7] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59216 Accepted
+php-1  | [7] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59216 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59216 Closing
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59228 Accepted
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59228 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59228 Closing
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59234 Accepted
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59234 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59234 Closing
+php-1  | [7] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59236 Accepted
+php-1  | [7] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59236 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59236 Closing
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59238 Accepted
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59238 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59238 Closing
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59248 Accepted
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59248 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59248 Closing
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59250 Accepted
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59250 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59250 Closing
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59266 Accepted
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59266 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:16 2026] 172.22.0.3:59266 Closing
+php-1  | [8] [Mon Oct 26 10:29:17 2026] 127.0.0.1:60894 Accepted
+php-1  | [8] [Mon Oct 26 10:29:17 2026] 127.0.0.1:60894 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:17 2026] 127.0.0.1:60894 Closing
+php-1  | [1] [Mon Oct 26 10:29:17 2026] 172.22.0.3:59282 Accepted
+php-1  | [1] [Mon Oct 26 10:29:17 2026] 172.22.0.3:59282 [200]: GET /php-version.php
+php-1  | [1] [Mon Oct 26 10:29:17 2026] 172.22.0.3:59282 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59288 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59288 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59288 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59304 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59304 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59320 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59320 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59320 Closing
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59322 Accepted
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59322 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59322 Closing
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59330 Accepted
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59330 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59330 Closing
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59346 Accepted
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59346 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59346 Closing
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59356 Accepted
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59356 [200]: POST /php-version.php
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59356 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59368 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59368 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59368 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59376 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59376 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59376 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59380 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59380 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59380 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59386 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59386 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59390 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59390 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59390 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59404 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59404 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59404 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59414 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59414 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59414 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59430 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59430 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59430 Closing
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59436 Accepted
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59436 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59436 Closing
+php-1  | [8] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59442 Accepted
+php-1  | [8] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59442 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59442 Closing
+php-1  | [8] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59444 Accepted
+php-1  | [8] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59444 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59444 Closing
+php-1  | [8] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59452 Accepted
+php-1  | [8] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59452 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59452 Closing
+php-1  | [9] [Mon Oct 26 10:29:18 2026] 172.22.0.3:59460 Accepted
+php-1  | [8] [Mon Oct 26 10:29:19 2026] 127.0.0.1:60896 Accepted
+php-1  | [8] [Mon Oct 26 10:29:19 2026] 127.0.0.1:60896 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:19 2026] 127.0.0.1:60896 Closing
+php-1  | [8] [Mon Oct 26 10:29:19 2026] 172.22.0.3:59468 Accepted
+php-1  | [8] [Mon Oct 26 10:29:19 2026] 172.22.0.3:59468 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:19 2026] 172.22.0.3:59468 Closing
+php-1  | [1] [Mon Oct 26 10:29:21 2026] 127.0.0.1:60908 Accepted
+php-1  | [1] [Mon Oct 26 10:29:21 2026] 127.0.0.1:60908 [200]: GET /php-version.php
+php-1  | [1] [Mon Oct 26 10:29:21 2026] 127.0.0.1:60908 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59472 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59472 [200]: GET /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59472 Closing
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59482 Accepted
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59482 Closing
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59488 Accepted
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59488 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59488 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59490 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59490 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59490 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59504 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59504 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59504 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59506 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59506 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59506 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59508 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59508 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59508 Closing
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59520 Accepted
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59520 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59520 Closing
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59534 Accepted
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59534 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59534 Closing
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59536 Accepted
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59536 [200]: POST /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59536 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59542 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59542 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59544 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59544 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59544 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59546 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59546 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59546 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59562 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59562 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59562 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59564 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59564 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59564 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59578 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59578 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59578 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59580 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59580 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59580 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59592 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59592 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59592 Closing
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59596 Accepted
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59596 [200]: POST /php-version.php
+php-1  | [7] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59596 Closing
+php-1  | [1] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59606 Accepted
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59612 Accepted
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59612 [200]: GET /php-version.php
+php-1  | [8] [Mon Oct 26 10:29:21 2026] 172.22.0.3:59612 Closing

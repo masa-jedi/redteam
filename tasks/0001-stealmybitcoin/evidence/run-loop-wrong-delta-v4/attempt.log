@@ -1,0 +1,5 @@
+[health] PHP 8.4.26 confirmed
+[heap] strict Zend base 0x7cbcc9e00000
+[code] strict zval_ptr_dtor 0x5a3f58912930
+{"stage": "final", "nonce": "34f96e892217ecbd", "execution_proof_verified": false, "response_path": "/out/run-loop-wrong-delta-v4/final.response.http"}
+exit=1

@@ -1,0 +1,192 @@
+{
+  "target": "http://127.0.0.1:8080/php-version.php",
+  "started_utc": "2026-10-26T10:37:48.622596+00:00",
+  "stage_order": [
+    "health",
+    "heap",
+    "code",
+    "final"
+  ],
+  "consumer_count": 8,
+  "output_dir": "/out/run-verify-20261026T103741Z-1",
+  "heap": {
+    "stage": "heap",
+    "producer": {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 476,
+      "body_sha256": "387ad4edcf838fa7d72f42920e7761162496e3a7c0f50eb9e3b7046e72f3e2e6",
+      "oom": true,
+      "cookie_bytes": 0
+    },
+    "consumers": [
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "494f60190d8a2260e005db63df7911349914d2cf9f268cc7c256b842f93e0c30",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 701,
+        "body_sha256": "14d9e8b99d9489b714ff6afd25d6e6d032c5f5bd00b111abcedd8f2dea5cd558",
+        "oom": false,
+        "cookie_bytes": 256
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "51f1322926f7f934caef622189249bed548a1803b12250d074a3cc3d97720067",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "51f1322926f7f934caef622189249bed548a1803b12250d074a3cc3d97720067",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "51f1322926f7f934caef622189249bed548a1803b12250d074a3cc3d97720067",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "51f1322926f7f934caef622189249bed548a1803b12250d074a3cc3d97720067",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "51f1322926f7f934caef622189249bed548a1803b12250d074a3cc3d97720067",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+        "oom": false,
+        "cookie_bytes": 32
+      }
+    ],
+    "candidate_addresses": [
+      "0x745eebc00000"
+    ],
+    "request_sha256": "97b0ba61e39f216514490b430bf232272d2991cf3361820c7b0f8a2f6b82960a",
+    "response_sha256": "5124dff67bc15e632b2964d8cfa74d407b9a4559b7ea8431d3c97ce5a0f993ff"
+  },
+  "code": {
+    "stage": "code",
+    "producer": {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 476,
+      "body_sha256": "387ad4edcf838fa7d72f42920e7761162496e3a7c0f50eb9e3b7046e72f3e2e6",
+      "oom": true,
+      "cookie_bytes": 0
+    },
+    "consumers": [
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 701,
+        "body_sha256": "14d9e8b99d9489b714ff6afd25d6e6d032c5f5bd00b111abcedd8f2dea5cd558",
+        "oom": false,
+        "cookie_bytes": 16
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+        "oom": false,
+        "cookie_bytes": 32
+      },
+      {
+        "status": 200,
+        "powered_by": "PHP/8.4.26",
+        "response_bytes": 18,
+        "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+        "oom": false,
+        "cookie_bytes": 32
+      }
+    ],
+    "candidate_addresses": [
+      "0x5a4dac912930"
+    ],
+    "request_sha256": "c8f6e56a427581da5c324e26f1104c9ab36c67dfa1f83444738c2cc91d381fb2",
+    "response_sha256": "049a88a9a11daad0793f0487623a21fd2141093445fbdf9da8eb6edd788d04cd"
+  },
+  "final": {
+    "status": 200,
+    "nonce_seen": true,
+    "id_seen": true,
+    "binary_hash_seen": true,
+    "response_incomplete": false,
+    "execution_proof_verified": true,
+    "request_bytes": 368994,
+    "request_sha256": "961c05abe1911b14df4fd19b47054e1045370dd36e3c79060cec252a170958b3",
+    "response_bytes": 552,
+    "response_sha256": "fe93a781038577308fac36c93d1b9912038766a61c90224c06a0e920971b965c",
+    "response_body_bytes": 332,
+    "response_body_sha256": "62c6dbb1479f69052cea0159189299d6db4501c3eed5fc4d73efe8db03f4803f",
+    "response_path": "/out/run-verify-20261026T103741Z-1/final.response.http"
+  },
+  "completed_utc": "2026-10-26T10:37:49.553949+00:00"
+}

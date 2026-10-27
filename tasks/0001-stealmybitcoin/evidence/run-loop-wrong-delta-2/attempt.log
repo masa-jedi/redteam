@@ -1,0 +1,4 @@
+[health] PHP 8.4.26 confirmed
+[heap] strict Zend base 0x7c7bcca00000
+[abort] RuntimeError: code: expected one strict address, found 0
+exit=1

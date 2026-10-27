@@ -1,0 +1,14 @@
+{
+  "target": "http://127.0.0.1:8080/php-version.php",
+  "started_utc": "2026-10-26T10:37:13.102770+00:00",
+  "stage_order": [
+    "health",
+    "heap",
+    "code",
+    "final"
+  ],
+  "consumer_count": 8,
+  "output_dir": "/out/run-mutmanual1",
+  "error": "RuntimeError: heap: producer did not return PHP 8.4.26 HTTP 200 OOM",
+  "completed_utc": "2026-10-26T10:37:13.265982+00:00"
+}

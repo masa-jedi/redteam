@@ -1,0 +1,15 @@
+{
+  "status": 200,
+  "nonce_seen": false,
+  "id_seen": false,
+  "binary_hash_seen": false,
+  "response_incomplete": false,
+  "execution_proof_verified": false,
+  "request_bytes": 368994,
+  "request_sha256": "f792d988d335c48d87d4c4eb8d77b671a841997bc091e032d8e59a79525892d7",
+  "response_bytes": 370,
+  "response_sha256": "26da045209fa1b513396636ba91518e5b32eb26f94a5df8d180ba666424dfdda",
+  "response_body_bytes": 151,
+  "response_body_sha256": "b5536eeb125a9d3311a6e120c9d0fcc325c91f350d61df10e74f93c8b0c1e14f",
+  "response_path": "/out/run-loop-wrong-delta-v4/final.response.http"
+}

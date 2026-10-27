@@ -1,0 +1,14 @@
+{
+  "target": "http://127.0.0.1:8080/php-version.php",
+  "started_utc": "2026-10-26T10:29:16.467601+00:00",
+  "stage_order": [
+    "health",
+    "heap",
+    "code",
+    "final"
+  ],
+  "consumer_count": 8,
+  "output_dir": "/out/run-nginx2",
+  "error": "RuntimeError: heap: expected one strict address, found 0",
+  "completed_utc": "2026-10-26T10:29:16.658505+00:00"
+}

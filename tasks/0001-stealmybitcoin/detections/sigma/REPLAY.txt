@@ -1,0 +1,22 @@
+== Sigma selection replayed on the attack response body (expect 1 hit) ==
+{
+  "input": "evidence/run-nginx4/final.response.body",
+  "lines": 6,
+  "sigma_selection_hits": 1,
+  "first_hit": "<b>Fatal error</b>:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 131072 bytes) in <b>Unknown</b> on line <b>0</b><br />"
+}
+<b>Fatal error</b>:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 131072 bytes) in <b>Unknown</b> on line <b>0</b><br />
+attack_body_exit=0
+
+== same selection on a benign version-page body (expect 0 hits) ==
+{
+  "input": "detections/benign-body.txt",
+  "lines": 2,
+  "sigma_selection_hits": 0,
+  "first_hit": null
+}
+benign_body_exit=1
+
+== second backend: grep -cE 'Allowed memory size.*exhausted' ==
+1
+0

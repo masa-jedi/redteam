@@ -1,0 +1,15 @@
+{
+  "status": 200,
+  "nonce_seen": true,
+  "id_seen": true,
+  "binary_hash_seen": true,
+  "response_incomplete": false,
+  "execution_proof_verified": true,
+  "request_bytes": 368994,
+  "request_sha256": "961c05abe1911b14df4fd19b47054e1045370dd36e3c79060cec252a170958b3",
+  "response_bytes": 552,
+  "response_sha256": "fe93a781038577308fac36c93d1b9912038766a61c90224c06a0e920971b965c",
+  "response_body_bytes": 332,
+  "response_body_sha256": "62c6dbb1479f69052cea0159189299d6db4501c3eed5fc4d73efe8db03f4803f",
+  "response_path": "/out/run-verify-20261026T103741Z-1/final.response.http"
+}

@@ -1,0 +1,3 @@
+[health] PHP 8.4.26 confirmed
+[abort] RuntimeError: heap: producer did not return PHP 8.4.26 HTTP 200 OOM
+exit=1

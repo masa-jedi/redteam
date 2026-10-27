@@ -1,0 +1,11 @@
+victim-1  | [26-Oct-2026 10:26:37 UTC] PHP Deprecated:  PHP Startup: Disabling session.use_only_cookies INI setting is deprecated in Unknown on line 0
+victim-1  | <br />
+victim-1  | <b>Deprecated</b>:  PHP Startup: Disabling session.use_only_cookies INI setting is deprecated in <b>Unknown</b> on line <b>0</b><br />
+victim-1  | [Mon Oct 26 10:26:37.486327 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.69 (Unix) PHP/8.4.26 configured -- resuming normal operations
+victim-1  | [Mon Oct 26 10:26:37.486360 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'httpd -D FOREGROUND'
+victim-1  | 127.0.0.1 - - [26/Oct/2026:10:26:39 +0000] "GET /php-version.php HTTP/1.1" 200 11 105 -
+victim-1  | 127.0.0.1 - - [26/Oct/2026:10:26:41 +0000] "GET /php-version.php HTTP/1.1" 200 11 105 -
+victim-1  | [26-Oct-2026 10:26:41 UTC] PHP Warning:  PHP Request Startup: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+victim-1  | [26-Oct-2026 10:26:41 UTC] PHP Warning:  PHP Request Startup: Session cookie cannot be sent after headers have already been sent in Unknown on line 0
+victim-1  | [26-Oct-2026 10:26:41 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in Unknown on line 0
+victim-1  | zend_mm_heap corrupted

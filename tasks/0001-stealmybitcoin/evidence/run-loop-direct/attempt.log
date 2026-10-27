@@ -1,0 +1,23 @@
+Unable to find image 'python:3.12-alpine' locally
+3.12-alpine: Pulling from library/python
+7b229517ed22: Pulling fs layer
+44f1f4ea9467: Pulling fs layer
+c03751883ae5: Pulling fs layer
+8dc6b13ab3d0: Pulling fs layer
+8dc6b13ab3d0: Waiting
+7b229517ed22: Download complete
+7b229517ed22: Pull complete
+44f1f4ea9467: Verifying Checksum
+44f1f4ea9467: Download complete
+8dc6b13ab3d0: Verifying Checksum
+8dc6b13ab3d0: Download complete
+c03751883ae5: Verifying Checksum
+c03751883ae5: Download complete
+44f1f4ea9467: Pull complete
+c03751883ae5: Pull complete
+8dc6b13ab3d0: Pull complete
+Digest: sha256:5789aa194f757888f41fa3d48e14b6feaa1b57c0af0b56fcb1372d6474d3bff0
+Status: Downloaded newer image for python:3.12-alpine
+[health] PHP 8.4.26 confirmed
+[abort] RemoteDisconnected: Remote end closed connection without response
+exit=1

@@ -1,0 +1,4 @@
+services:
+  php:
+    volumes:
+      - ../verify/mutation-off.ini:/usr/local/etc/php/conf.d/99-mutation.ini:ro

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/specimen/stealmybitcoin_poc.py", line 763, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/specimen/stealmybitcoin_poc.py", line 729, in main
+    output.mkdir(parents=True, exist_ok=False)
+  File "/usr/local/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/out/run-loop-one-worker-v2'
+exit=1

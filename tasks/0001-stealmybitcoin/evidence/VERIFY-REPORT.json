@@ -1,0 +1,26 @@
+{
+  "generated_utc": "2026-10-26T10:38:42Z",
+  "verify": "pass",
+  "checks": {
+    "static calibration": {
+      "ok": true,
+      "detail": "zval_ptr_dtor=0x712930 low21=0x112930 expected 0x112930"
+    },
+    "benign baseline": {
+      "ok": true,
+      "detail": "pass"
+    },
+    "live attack": {
+      "ok": true,
+      "detail": "attempt 2: nonce/hash/flag verified; heap=0x745eebc00000 code=0x5a4dac912930 (run-verify-20261026T103741Z-1)"
+    },
+    "mutation A (no upload progress)": {
+      "ok": true,
+      "detail": "baseline_ok=True attack_proof=False stopped_early=True error=RuntimeError: heap: producer did not return PHP 8.4.26 HTTP 200 OOM"
+    },
+    "mutation B (broken page)": {
+      "ok": true,
+      "detail": "baseline_rejected_bad_page=True exit=1 out={\n  \"baseline\": \"fail\",\n  \"checks\": {\n    \"get_status_200\": false,\n    \"get_powered_by\": true,\n    \"get_body\": false,\n    \"get_no_flag\": true,\n    \"post_status_"
+    }
+  }
+}

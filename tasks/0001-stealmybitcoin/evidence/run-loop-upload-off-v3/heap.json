@@ -1,0 +1,80 @@
+{
+  "stage": "heap",
+  "producer": {
+    "status": 200,
+    "powered_by": "PHP/8.4.26",
+    "response_bytes": 325,
+    "body_sha256": "56200b36f2050c9fcfa92662b9e26af0e9b713ef218e4f612df0507228260fbf",
+    "oom": false,
+    "cookie_bytes": 0
+  },
+  "consumers": [
+    {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 18,
+      "body_sha256": "51f1322926f7f934caef622189249bed548a1803b12250d074a3cc3d97720067",
+      "oom": false,
+      "cookie_bytes": 0
+    },
+    {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 18,
+      "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+      "oom": false,
+      "cookie_bytes": 0
+    },
+    {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 18,
+      "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+      "oom": false,
+      "cookie_bytes": 0
+    },
+    {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 18,
+      "body_sha256": "c8dee63aa0976148e6c8948c67c48450338cc6be813641b24a3cdd2f53423e04",
+      "oom": false,
+      "cookie_bytes": 0
+    },
+    {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 18,
+      "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+      "oom": false,
+      "cookie_bytes": 0
+    },
+    {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 18,
+      "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+      "oom": false,
+      "cookie_bytes": 0
+    },
+    {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 18,
+      "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+      "oom": false,
+      "cookie_bytes": 0
+    },
+    {
+      "status": 200,
+      "powered_by": "PHP/8.4.26",
+      "response_bytes": 18,
+      "body_sha256": "4abeda023ec93fb3585236cf4f78a35f70b2287a22477c81b67dd7b1d42f9d90",
+      "oom": false,
+      "cookie_bytes": 0
+    }
+  ],
+  "candidate_addresses": [],
+  "request_sha256": "97b0ba61e39f216514490b430bf232272d2991cf3361820c7b0f8a2f6b82960a",
+  "response_sha256": "9bbfe2389946bc65212f25ae09572b8f8039aa506bce97ffd9fcea66245da01f"
+}

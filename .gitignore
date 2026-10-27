@@ -1,0 +1,5 @@
+# Docker CLI config created by `make` inside the workspace.
+.docker/
+
+# Compiled lab artifact from the rejected Apache attempt; rebuilds are historical.
+tasks/*/lab/build-out/

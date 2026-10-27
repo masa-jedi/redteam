@@ -1,0 +1,15 @@
+{
+  "status": 200,
+  "nonce_seen": false,
+  "id_seen": false,
+  "binary_hash_seen": false,
+  "response_incomplete": false,
+  "execution_proof_verified": false,
+  "request_bytes": 368994,
+  "request_sha256": "3394ca03c7aca541ae09bb8cb65a80999a5f08c98c22cb13067dd50d6b24409c",
+  "response_bytes": 370,
+  "response_sha256": "58c4f274fb0c4df960ad8af99be59cac16121261ac7270e81521ae022c079b02",
+  "response_body_bytes": 151,
+  "response_body_sha256": "b5536eeb125a9d3311a6e120c9d0fcc325c91f350d61df10e74f93c8b0c1e14f",
+  "response_path": "/out/run-nginx3/final.response.http"
+}

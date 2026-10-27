@@ -1,0 +1,3 @@
+[health] PHP 8.4.26 confirmed
+[abort] RemoteDisconnected: Remote end closed connection without response
+exit=1

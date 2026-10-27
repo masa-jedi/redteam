@@ -1,0 +1,25 @@
+== specimen (expect match) ==
+StealMyBitcoin_PHP8426_PoC tasks/0001-stealmybitcoin/specimen/stealmybitcoin_poc.py
+0x222b:$s1: PHP_SESSION_UPLOAD_PROGRESS
+0x24f5:$s1: PHP_SESSION_UPLOAD_PROGRESS
+0x2d51:$s1: PHP_SESSION_UPLOAD_PROGRESS
+0xa7f:$s2: COOKIE-LAB-BOUNDARY
+0x400:$s3: zif_system
+0x369b:$s3: zif_system
+0x3716:$s3: zif_system
+0x380b:$s3: zif_system
+0x385d:$s3: zif_system
+0x3c74:$s3: zif_system
+0x3dec:$s3: zif_system
+0x4735:$s3: zif_system
+0x606:$s4: print-flag
+0x49b6:$s4: print-flag
+0x49d0:$s4: print-flag
+0x4a7f:$s4: print-flag
+0x4ac7:$s4: print-flag
+0x7310:$s4: print-flag
+0x4ecd:$s5: multipart/form-data; boundary=
+0x5124:$s5: multipart/form-data; boundary=
+specimen_exit=0
+== benign app (expect no match) ==
+benign_exit=0

@@ -1,0 +1,5 @@
+ Image task001-nginx:local Building 
+ Image task001-php:local Building 
+mkdir /home/jedi/.docker: permission denied
+
+v1_compose_exit=1

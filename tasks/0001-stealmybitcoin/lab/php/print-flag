@@ -1,0 +1,10 @@
+#!/bin/sh
+# Canary: record the execution context, then print the synthetic flag.
+{
+    w=$(awk '{print $4}' "/proc/$PPID/stat" 2>/dev/null)
+    printf 'ts=%s uid=%s sh_pid=%s worker_pid=%s worker_exe=%s worker_cmd=%s\n' \
+        "$(date -u +%FT%TZ)" "$(id -u)" "$PPID" "$w" \
+        "$(readlink "/proc/$w/exe" 2>/dev/null)" \
+        "$(tr '\0' ' ' <"/proc/$w/cmdline" 2>/dev/null)"
+} >>/tmp/flag-access.log 2>/dev/null
+cat /flag

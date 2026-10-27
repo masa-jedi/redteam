@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task 001 — The hotel desk and the shell</title>
+<style>
+  :root {
+    --paper: #f6f2e8;
+    --ink: #1b1b17;
+    --muted: #6f6a5e;
+    --line: #ddd5c4;
+    --panel: #fffdf7;
+    --accent: #b23a1b;
+    --teal: #0f6b5f;
+    --amber: #9a6410;
+    --code: #1c1b17;
+    --code-ink: #f2ead8;
+    --shadow: 0 1px 0 rgba(28, 27, 23, .05), 0 18px 40px -28px rgba(28, 27, 23, .35);
+    --radius: 16px;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --serif: ui-serif, Georgia, "Times New Roman", serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #141412;
+      --ink: #f1ead9;
+      --muted: #a49d8f;
+      --line: #33312b;
+      --panel: #1c1b18;
+      --accent: #e0714f;
+      --teal: #5ec6b4;
+      --amber: #e2b15b;
+      --code: #0f0f0d;
+      --code-ink: #f1ead9;
+      --shadow: 0 1px 0 rgba(255,255,255,.03), 0 18px 40px -28px rgba(0,0,0,.8);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--background, var(--paper));
+    color: var(--foreground, var(--ink));
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 22px 20px 72px; }
+  .masthead {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 12px 2px 22px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--muted-foreground, var(--muted));
+  }
+  .masthead strong { color: var(--foreground, var(--ink)); font-weight: 600; }
+  .masthead .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: inline-block; margin-right: 8px; vertical-align: 1px; }
+  .hero {
+    position: relative; overflow: hidden;
+    background: var(--card, var(--panel));
+    border: 1px solid var(--border, var(--line));
+    border-radius: calc(var(--radius) + 8px);
+    box-shadow: var(--shadow);
+    padding: clamp(24px, 4vw, 52px);
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 7px;
+    background: linear-gradient(90deg, var(--accent), #d99a5b 48%, var(--teal));
+  }
+  .hero::after {
+    content: ""; position: absolute; width: 380px; height: 380px; right: -140px; top: -190px;
+    border-radius: 50%; border: 1px solid var(--border, var(--line)); opacity: .55; pointer-events: none;
+  }
+  .kicker {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 18px;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(2.25rem, 6vw, 4.65rem);
+    line-height: .98; letter-spacing: -.045em;
+    margin: 0 0 18px; max-width: 14ch;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lede {
+    font-size: clamp(1.02rem, 1.6vw, 1.22rem); line-height: 1.55;
+    max-width: 70ch; color: var(--foreground, var(--ink)); margin: 0 0 26px;
+  }
+  .lede strong { font-weight: 600; }
+  .stats {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;
+    margin: 30px 0 22px;
+  }
+  .stat {
+    border-top: 1px solid var(--border, var(--line)); padding: 12px 0 0;
+  }
+  .stat .n { font-family: var(--serif); font-size: clamp(1.7rem, 3.5vw, 2.5rem); line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+  .stat .l { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-foreground, var(--muted)); margin-top: 7px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+    border: 1px solid var(--border, var(--line)); border-radius: 999px; padding: 6px 11px;
+    background: color-mix(in srgb, var(--card, var(--panel)) 84%, transparent);
+    color: var(--foreground, var(--ink)); white-space: nowrap;
+  }
+  .badge i { width: 6px; height: 6px; border-radius: 50%; display: inline-block; background: var(--muted); }
+  .badge.good { border-color: color-mix(in srgb, var(--teal) 45%, var(--border, var(--line))); }
+  .badge.good i { background: var(--teal); }
+  .badge.warn { border-color: color-mix(in srgb, var(--amber) 55%, var(--border, var(--line))); }
+  .badge.warn i { background: var(--amber); }
+  .badge.bad { border-color: color-mix(in srgb, var(--accent) 50%, var(--border, var(--line))); }
+  .badge.bad i { background: var(--accent); }
+  .stamp {
+    position: absolute; right: 26px; bottom: 24px; transform: rotate(-5deg);
+    border: 2px solid var(--accent); color: var(--accent);
+    font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+    padding: 7px 11px; border-radius: 4px; opacity: .8;
+  }
+  @media (max-width: 720px) { .stamp { display: none; } }
+
+  .toc {
+    display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 22px 2px 6px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    border-bottom: 1px solid var(--border, var(--line)); margin-bottom: 34px;
+  }
+  .toc a { color: var(--muted-foreground, var(--muted)); text-decoration: none; }
+  .toc a:hover { color: var(--accent); }
+
+  section { margin: 54px 0 0; scroll-margin-top: 24px; }
+  .sechead { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: start; margin-bottom: 18px; }
+  .secno { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--accent); padding-top: 7px; }
+  h2 {
+    font-family: var(--serif); font-weight: 500; letter-spacing: -.03em;
+    font-size: clamp(1.55rem, 3.2vw, 2.35rem); line-height: 1.08; margin: 0;
+  }
+  .dek { color: var(--muted-foreground, var(--muted)); font-size: .98rem; max-width: 72ch; margin: 8px 0 0; }
+  h3 { font-size: 1.02rem; letter-spacing: -.01em; margin: 28px 0 8px; }
+  p { max-width: 78ch; }
+  .small { font-size: .88rem; color: var(--muted-foreground, var(--muted)); }
+
+  .ladder { display: grid; grid-template-columns: 1fr 1fr 1.35fr; gap: 14px; }
+  .rung {
+    background: var(--card, var(--panel)); border: 1px solid var(--border, var(--line));
+    border-radius: var(--radius); padding: 20px;
+  }
+  .rung .tag {
+    display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  .rung p { margin: 0; font-size: .95rem; line-height: 1.55; }
+  .rung.deep { border-color: color-mix(in srgb, var(--accent) 30%, var(--border, var(--line))); }
+  .rung.deep p { font-family: var(--mono); font-size: .8rem; line-height: 1.65; }
+
+  .story {
+    background: var(--card, var(--panel)); border: 1px solid var(--border, var(--line));
+    border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 26px clamp(18px, 3vw, 32px);
+  }
+  .story ol { list-style: none; counter-reset: step; margin: 8px 0 0; padding: 0; display: grid; gap: 18px; }
+  .story li { counter-increment: step; display: grid; grid-template-columns: 38px 1fr; gap: 13px; align-items: start; }
+  .story li::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: var(--mono); font-size: 11px; color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border, var(--line)));
+    border-radius: 50%; width: 30px; height: 30px; display: grid; place-items: center;
+  }
+  .story li p { margin: 2px 0 0; }
+  .story li strong { color: var(--accent); }
+
+  .map { width: 100%; border-collapse: collapse; margin-top: 18px; }
+  .map th, .map td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border, var(--line)); vertical-align: top; }
+  .map th { font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-foreground, var(--muted)); font-weight: 500; }
+  .map td { font-size: .9rem; }
+  .map td:first-child { color: var(--muted-foreground, var(--muted)); font-family: var(--mono); font-size: .8rem; white-space: nowrap; }
+  .map tr:last-child td { border-bottom: 0; }
+
+  .arch {
+    background: var(--card, var(--panel)); border: 1px solid var(--border, var(--line));
+    border-radius: var(--radius); padding: 18px 14px 8px; margin: 18px 0;
+  }
+  .arch svg { width: 100%; height: auto; display: block; }
+  .arch .node { fill: var(--card, var(--panel)); stroke: var(--border, var(--line)); }
+  .arch .node-flag { fill: var(--amber, #9a6410); fill-opacity: .12; stroke: var(--amber, #9a6410); }
+  .arch .w { fill: var(--teal, #0f6b5f); fill-opacity: .16; stroke: var(--teal, #0f6b5f); }
+  .arch .t-accent { fill: var(--accent, #b23a1b); }
+  .arch .t-ink { fill: var(--foreground, var(--ink)); }
+  .arch .t-muted { fill: var(--muted-foreground, var(--muted)); }
+  .arch .t-amber { fill: var(--amber, #9a6410); }
+  .arch .arrow { stroke: var(--accent, #b23a1b); fill: none; }
+  .arch .arrow-teal { stroke: var(--teal, #0f6b5f); fill: none; }
+  .arch .cap { font-family: var(--mono); font-size: 10px; letter-spacing: .04em; color: var(--muted-foreground, var(--muted)); padding: 4px 6px 10px; }
+  .svc { width: 100%; border-collapse: collapse; margin-top: 14px; }
+  .svc th, .svc td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border, var(--line)); vertical-align: top; }
+  .svc th { font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-foreground, var(--muted)); font-weight: 500; }
+  .svc td { font-size: .89rem; }
+  .svc td:first-child { font-family: var(--mono); font-size: .8rem; white-space: nowrap; color: var(--accent); }
+
+  .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+  .stage {
+    background: var(--card, var(--panel)); border: 1px solid var(--border, var(--line));
+    border-radius: var(--radius); padding: 18px; position: relative;
+  }
+  .stage .n { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; color: var(--accent); }
+  .stage h4 { margin: 7px 0 7px; font-size: .98rem; letter-spacing: -.01em; }
+  .stage p { margin: 0; font-size: .84rem; color: var(--muted-foreground, var(--muted)); max-width: none; }
+  .stage code { font-size: .76rem; }
+
+  .codeblock {
+    background: var(--code); color: var(--code-ink); border-radius: var(--radius);
+    padding: 20px 22px; overflow-x: auto; font-family: var(--mono); font-size: .78rem; line-height: 1.65;
+    border: 1px solid color-mix(in srgb, var(--code) 70%, var(--border, var(--line)));
+  }
+  .codeblock .c { color: #9ad1c4; }
+  .codeblock .f { color: #e7a07c; }
+  .codeblock .g { color: #d9c48b; }
+  .codeblock .dim { color: #8f8a7d; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border, var(--line)); border-radius: var(--radius); background: var(--card, var(--panel)); }
+  table.data { width: 100%; border-collapse: collapse; min-width: 620px; }
+  table.data th, table.data td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border, var(--line)); vertical-align: top; }
+  table.data thead th { font-family: var(--mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-foreground, var(--muted)); font-weight: 500; background: color-mix(in srgb, var(--card, var(--panel)) 90%, var(--foreground, var(--ink))); position: sticky; top: 0; }
+  table.data td { font-size: .82rem; line-height: 1.45; }
+  table.data tr:last-child td { border-bottom: 0; }
+  table.data td strong { font-weight: 600; }
+  .ok { color: var(--teal); font-weight: 600; }
+  .no { color: var(--accent); font-weight: 600; }
+  .mid { color: var(--amber); font-weight: 600; }
+
+  .callout { border-radius: var(--radius); padding: 18px 20px; margin: 18px 0; border: 1px solid var(--border, var(--line)); background: var(--card, var(--panel)); }
+  .callout.eli5 { border-left: 4px solid var(--accent); }
+  .callout.good { border-left: 4px solid var(--teal); }
+  .callout.warn { border-left: 4px solid var(--amber); }
+  .callout .label { font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 7px; }
+  .callout.good .label { color: var(--teal); }
+  .callout.warn .label { color: var(--amber); }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .panel { background: var(--card, var(--panel)); border: 1px solid var(--border, var(--line)); border-radius: var(--radius); padding: 20px; }
+  .panel h4 { margin: 0 0 8px; font-size: .95rem; }
+  .panel p { margin: 0; font-size: .87rem; color: var(--muted-foreground, var(--muted)); max-width: none; }
+  .panel ul { margin: 8px 0 0; padding-left: 18px; font-size: .87rem; color: var(--muted-foreground, var(--muted)); }
+  .panel li { margin: 4px 0; }
+
+  .files { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 26px; margin-top: 14px; }
+  .files a { display: flex; justify-content: space-between; gap: 12px; padding: 11px 2px; border-bottom: 1px solid var(--border, var(--line)); color: var(--foreground, var(--ink)); text-decoration: none; font-size: .9rem; }
+  .files a span:first-child { font-family: var(--mono); font-size: .78rem; color: var(--accent); }
+  .files a:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+  .files a span:last-child { color: var(--muted-foreground, var(--muted)); font-size: .78rem; text-align: right; }
+
+  .foot { margin-top: 60px; padding-top: 18px; border-top: 1px solid var(--border, var(--line)); font-family: var(--mono); font-size: 10px; line-height: 1.8; letter-spacing: .02em; color: var(--muted-foreground, var(--muted)); }
+  .foot strong { color: var(--foreground, var(--ink)); }
+
+  @media (max-width: 900px) {
+    .ladder { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .files { grid-template-columns: 1fr; }
+    .two, .three { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .cards { grid-template-columns: 1fr; }
+    .sechead { grid-template-columns: 1fr; gap: 4px; }
+    .secno { padding-top: 0; }
+    .story li { grid-template-columns: 30px 1fr; }
+    .story li::before { width: 26px; height: 26px; font-size: 10px; }
+  }
+  @media print {
+    body { background: #fff; color: #000; }
+    .stamp, .toc { display: none; }
+    .hero, .rung, .story, .panel, .stage, .table-wrap, .callout { box-shadow: none; }
+    table.data thead th { position: static; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div><span class="dot"></span><strong>Task 001</strong> &nbsp;/&nbsp; redteam log</div>
+    <div>lab only &nbsp;·&nbsp; 2026-10-26</div>
+  </div>
+
+  <header class="hero">
+    <p class="kicker">A public CTF, rebuilt as a disposable lab</p>
+    <h1>The hotel desk <em>and</em> the shell.</h1>
+    <p class="lede">
+      A five-year-old's story about a robot clerk, a dropped note, and a fake instruction.
+      Then the actual PHP 8.4.26 chain, the scan checklist, and the honest gaps.
+      The name says <strong>“Steal My Bitcoin”</strong>; the bug is a <strong>PHP memory-corruption RCE</strong>.
+      The real site was never touched.
+    </p>
+    <div class="stats">
+      <div class="stat"><div class="n">4</div><div class="l">verified RCEs</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">real targets</div></div>
+      <div class="stat"><div class="n">131/131</div><div class="l">evidence files</div></div>
+      <div class="stat"><div class="n">5/5</div><div class="l">verify checks</div></div>
+    </div>
+    <div class="badges">
+      <span class="badge good"><i></i>Lab: verified</span>
+      <span class="badge good"><i></i>Real site: untouched</span>
+      <span class="badge warn"><i></i>Blind: no</span>
+      <span class="badge bad"><i></i>Reliable: race</span>
+    </div>
+    <div class="stamp">Lab only · no real target</div>
+  </header>
+
+  <nav class="toc">
+    <a href="#ladder">Depth ladder</a>
+    <a href="#story">The hotel story</a>
+    <a href="#lab">The lab</a>
+    <a href="#bug">The bug</a>
+    <a href="#result">The result</a>
+    <a href="#scan">The scan</a>
+    <a href="#tweets">The internet arguments</a>
+    <a href="#agents">Agents &amp; swarms</a>
+    <a href="#gaps">Honest gaps</a>
+    <a href="#files">Read next</a>
+  </nav>
+
+  <!-- ============ 1. LADDER ============ -->
+  <section id="ladder">
+    <div class="sechead">
+      <div class="secno">01</div>
+      <div>
+        <h2>Start high. Then go deeper.</h2>
+        <p class="dek">Three readings of the same result. Read the first column, then the second, then the third.</p>
+      </div>
+    </div>
+    <div class="ladder">
+      <div class="rung">
+        <span class="tag">10 seconds</span>
+        <p><strong>The lab is exploitable.</strong> A crafted multipart body OOMs a PHP 8.4.26 worker, leaks the heap and a code pointer, forges a cleanup callback, and runs a command. Four verified runs; the flag is synthetic. The real site was not touched.</p>
+      </div>
+      <div class="rung">
+        <span class="tag">5 years old</span>
+        <p>A robot clerk has a tiny desk. You give it a giant form; it runs out of desk space and drops its notes. The notes tell you where its desk and rulebook are. You hand it a fake card, and it reads the card instead of the rulebook. That is the whole trick.</p>
+      </div>
+      <div class="rung deep">
+        <span class="tag">Engineer</span>
+        <p>PHP 8.4.26, Alpine CLI server, 4 workers, nginx in front, <code>memory_limit=128M</code>, upload progress on. 249 KiB producer → OOM → stale session state. 8 consumers → 256-byte <code>PHPSESSID</code> → heap chunk <code>0x783213000000</code>. Second pair → 16-byte cookie → <code>zval_ptr_dtor</code> low21 <code>0x112930</code>. Forged 384-byte HashTable → <code>zif_system</code> → command writes to the upstream socket. Success is a race: ~4/10 here, 7/10 upstream.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. STORY ============ -->
+  <section id="story">
+    <div class="sechead">
+      <div class="secno">02</div>
+      <div>
+        <h2>The hotel story.</h2>
+        <p class="dek">A real-world narrative first. The mapping to the technical objects is underneath.</p>
+      </div>
+    </div>
+
+    <div class="two" style="margin-top:16px">
+      <div class="panel">
+        <h4>Heap = the desk</h4>
+        <p>The place where the program keeps its working papers: the form data, the session, the fake card. The 128 MiB memory limit is how big the desk is.</p>
+      </div>
+      <div class="panel">
+        <h4>Cookie = the note the clerk hands back</h4>
+        <p>A website gives your browser a small note and asks it to bring it back next time. The server writes <code>Set-Cookie: PHPSESSID=...</code>; the browser returns it. The cookie is the envelope; the number on the sticky note is a number that tells you where the desk is.</p>
+      </div>
+    </div>
+
+    <div class="story" style="margin-top:16px">
+      <p class="small" style="margin-top:0">Imagine a hotel with a very fast robot clerk. The clerk reads forms all day and keeps its notes on a small desk beside it. The desk is only so big. The clerk also has a rulebook and a master key.</p>
+      <ol>
+        <li><p><strong>The giant form.</strong> You hand the clerk a form with a thousand tiny boxes inside boxes. It tries to open every box at once. The desk fills up, the clerk runs out of space, and it drops its notes on the desk. It keeps working.</p></li>
+        <li><p><strong>The dropped notes.</strong> You hand it eight more small forms very quickly. One of the dropped notes is a note the clerk hands back; stuck to it is a sticky note with a number that says where the desk is.</p></li>
+        <li><p><strong>The rulebook.</strong> You hand it another giant form. It drops a different note: a number that says where the rulebook is kept.</p></li>
+        <li><p><strong>The fake card.</strong> You now know where the desk is and where the rulebook is. You hand the clerk one last form with a fake instruction card. While cleaning up, the clerk reads the card instead of the rulebook, and does what it says.</p></li>
+        <li><p><strong>The golden ticket.</strong> The fake instruction says “print the golden ticket.” The clerk writes it onto the reply it was already sending back. That is the flag. In our hotel, the golden ticket is fake and there are no real guests.</p></li>
+      </ol>
+    </div>
+
+    <div class="table-wrap" style="margin-top:16px">
+      <table class="map">
+        <thead><tr><th>In the story</th><th>In the lab</th></tr></thead>
+        <tbody>
+          <tr><td>Hotel</td><td>The disposable Docker lab; no real guests or real funds</td></tr>
+          <tr><td>Robot clerk</td><td>A PHP 8.4.26 CLI worker (four of them)</td></tr>
+          <tr><td>Desk</td><td>The PHP worker's heap (Zend MM), where request/session data lives</td></tr>
+          <tr><td>Desk size</td><td>The 128 MiB <code>memory_limit</code></td></tr>
+          <tr><td>Giant form</td><td>The 249 KiB multipart producer with deeply nested field names</td></tr>
+          <tr><td>Dropped notes</td><td>Stale session state; the over-read bytes that carry the pointers</td></tr>
+          <tr><td>Cookie handed back</td><td><code>Set-Cookie: PHPSESSID</code>, over-read to 256 bytes</td></tr>
+          <tr><td>Sticky note with a number</td><td>An 8-byte heap pointer inside the cookie; the aligned 2 MiB base is the desk's address</td></tr>
+          <tr><td>Rulebook location</td><td>The 16-byte cookie leaks <code>zval_ptr_dtor</code>; the rulebook page (<code>zif_system</code>) is at <code>-0x204bc0</code></td></tr>
+          <tr><td>Fake instruction card</td><td>Forged 384-byte HashTable placed at <code>heap_base - 0x8400000 + 0x16D1D8</code>; <code>pDestructor</code> is <code>zif_system</code></td></tr>
+          <tr><td>Golden ticket</td><td><code>FLAG{task001_php8426_lab_9f3c2a}</code> (synthetic)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 3. LAB ============ -->
+  <section id="lab">
+    <div class="sechead">
+      <div class="secno">03</div>
+      <div>
+        <h2>The lab, high level.</h2>
+        <p class="dek">Four services, one internal network, no route to the internet. nginx is the front desk; the PHP CLI server is the clerk pool; the attacker is the visitor; telemetry watches the wire.</p>
+      </div>
+    </div>
+
+    <div class="arch">
+      <svg viewBox="0 0 1000 320" role="img" aria-label="attacker sends nine pipelined requests to nginx, which forwards one upstream request at a time to four PHP workers; the command output comes back through nginx.">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" class="t-accent"/>
+          </marker>
+        </defs>
+        <!-- attacker -->
+        <rect x="26" y="90" width="190" height="125" rx="14" class="node"/>
+        <text x="121" y="132" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" class="t-accent">ATTACKER</text>
+        <text x="121" y="157" text-anchor="middle" font-size="13" class="t-ink">python + specimen</text>
+        <text x="121" y="180" text-anchor="middle" font-size="11" class="t-muted">shares nginx netns</text>
+        <text x="121" y="198" text-anchor="middle" font-size="11" class="t-muted">127.0.0.1:8080</text>
+        <!-- nginx -->
+        <rect x="300" y="78" width="200" height="150" rx="14" class="node"/>
+        <text x="400" y="116" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" class="t-accent">NGINX</text>
+        <text x="400" y="142" text-anchor="middle" font-size="13" class="t-ink">front door</text>
+        <text x="400" y="164" text-anchor="middle" font-size="11" class="t-muted">proxy_http_version 1.1</text>
+        <text x="400" y="182" text-anchor="middle" font-size="11" class="t-muted">reconnects upstream</text>
+        <text x="400" y="204" text-anchor="middle" font-size="11" class="t-muted">forwards the injected bytes</text>
+        <!-- php -->
+        <rect x="584" y="66" width="240" height="174" rx="14" class="node"/>
+        <text x="704" y="104" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" class="t-accent">PHP 8.4.26 CLI</text>
+        <text x="704" y="128" text-anchor="middle" font-size="13" class="t-ink">four workers</text>
+        <g>
+          <rect x="614" y="146" width="42" height="42" rx="7" class="w"/>
+          <rect x="664" y="146" width="42" height="42" rx="7" class="w"/>
+          <rect x="714" y="146" width="42" height="42" rx="7" class="w"/>
+          <rect x="764" y="146" width="42" height="42" rx="7" class="w"/>
+          <text x="704" y="211" text-anchor="middle" font-size="10.5" class="t-muted">one poisoned worker is reused</text>
+        </g>
+        <!-- flag -->
+        <rect x="880" y="104" width="96" height="105" rx="14" class="node-flag"/>
+        <text x="928" y="140" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" class="t-amber">FLAG</text>
+        <text x="928" y="162" text-anchor="middle" font-size="11" class="t-ink">synthetic</text>
+        <text x="928" y="181" text-anchor="middle" font-size="10" class="t-muted">read by</text>
+        <text x="928" y="195" text-anchor="middle" font-size="10" class="t-muted">print-flag</text>
+        <!-- arrows -->
+        <path d="M 216 152 L 294 152" class="arrow" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <text x="255" y="140" text-anchor="middle" font-size="10" class="t-muted">9 pipelined</text>
+        <path d="M 500 152 L 578 152" class="arrow" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <text x="539" y="140" text-anchor="middle" font-size="10" class="t-muted">one at a time</text>
+        <path d="M 824 152 L 874 152" class="arrow-teal" stroke-width="1.6" marker-end="url(#arrow)"/>
+        <text x="849" y="140" text-anchor="middle" font-size="10" class="t-muted">zif_system</text>
+        <path d="M 700 248 C 700 292, 470 292, 400 236" fill="none" class="arrow-teal" stroke-width="1.4" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+        <text x="550" y="302" text-anchor="middle" font-size="10" class="t-muted">the command writes back to the upstream socket; nginx forwards it into the response</text>
+      </svg>
+      <div class="cap">The critical detail: the PHP worker owns the <strong>upstream</strong> socket to nginx, not the client socket. That is why the command output reaches the HTTP response.</div>
+    </div>
+
+    <table class="svc">
+      <thead><tr><th>Service</th><th>Role</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td>php</td><td>PHP 8.4.26 CLI server, four workers, <code>/app/php-version.php</code>, <code>/flag</code>, <code>print-flag</code></td><td>The vulnerable parser and the target asset live here. It runs as root in the lab.</td></tr>
+        <tr><td>nginx</td><td>Front proxy; serializes the pipelined requests; reconnects to the workers</td><td>Without the proxy, the CLI server closes the producer connection and the consumers are lost.</td></tr>
+        <tr><td>attacker</td><td>Python container with the pinned specimen; shares nginx's network namespace</td><td>Targets <code>127.0.0.1:8080</code>; no published port, no internet route.</td></tr>
+        <tr><td>telemetry</td><td><code>tcpdump</code> on nginx's namespace → <code>evidence/lab.pcap</code></td><td>Keeps a wire record. Currently stopped; <code>make lab-up</code> starts it.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout eli5">
+      <span class="label">The real-world version</span>
+      <p>A hotel with a robot clerk and a master key. The clerk is a PHP worker; the desk is the heap; the forms are multipart requests; the dropped notes are cookies; the rulebook is the code image; the fake card is a forged cleanup callback. In a real hotel this would be a serious incident. Here the hotel is a mock and the key opens a fake safe.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. BUG ============ -->
+  <section id="bug">
+    <div class="sechead">
+      <div class="secno">04</div>
+      <div>
+        <h2>The bug and the gain.</h2>
+        <p class="dek">Not an application bug. Not a wallet. A memory-corruption chain in PHP's request parser, reached through a crafted multipart body.</p>
+      </div>
+    </div>
+
+    <p><strong>What the bug is.</strong> PHP 8.4.26 parses a multipart body into deeply nested arrays while it is also handling session upload progress. On this build, with a 128 MiB limit, the parse exhausts memory. The OOM leaves half-built session state in a worker that is then reused. The PoC turns that state into two disclosures and a forged PHP structure.</p>
+
+    <div class="cards">
+      <div class="stage"><div class="n">STAGE 01</div><h4>Exhaust</h4><p>A 249 KiB body with nested names builds a tree much larger than the wire bytes. The 128 MiB limit is hit; the worker survives with stale state.</p></div>
+      <div class="stage"><div class="n">STAGE 02</div><h4>Leak heap</h4><p>Eight consumers race for the poisoned worker. One returns a 256-byte <code>PHPSESSID</code>; the pointers agree on a 2 MiB-aligned chunk base.</p></div>
+      <div class="stage"><div class="n">STAGE 03</div><h4>Leak code</h4><p>A second pair returns a 16-byte cookie with <code>zval_ptr_dtor</code>. Its low 21 bits, <code>0x112930</code>, are the build fingerprint.</p></div>
+      <div class="stage"><div class="n">STAGE 04</div><h4>Callback</h4><p>A 384-byte forged HashTable points <code>pDestructor</code> at <code>zif_system</code>; cleanup calls it with the command in the same buffer.</p></div>
+    </div>
+
+    <div class="callout warn">
+      <span class="label">What the hacker gains</span>
+      <p><strong>Remote code execution as the worker.</strong> In this lab that is root inside the container; it can read <code>/flag</code> and anything the PHP process can reach. The response also carries the execution proof: a fresh nonce, <code>uid=</code>, the <code>print-flag</code> hash, and the flag. The successful callback also kills the CLI server parent (<code>Exited (139)</code>) — an availability side effect, not a separate exploit.</p>
+    </div>
+
+    <p><strong>What it is not.</strong> Not an application bug (the app is six lines). Not a configuration mistake (the lab is deliberately hardened: internal network, read-only root, <code>cap_drop: ALL</code>, no published port). Not a generic PHP exploit: the heap and code offsets are specific to this Alpine build, four workers, 128 MiB, and nginx. The exact source-level root cause in PHP's parser is the PoC author's claim; this task reproduced the behavior, not an independent C-level root cause.</p>
+
+    <h3>The technical preconditions</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Requirement</th><th>This lab</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td>PHP build</td><td>8.4.26 Alpine CLI; <code>zval_ptr_dtor</code> low21 <code>0x112930</code></td><td>Heap and code offsets are build-specific</td></tr>
+          <tr><td>Worker model</td><td>Four <code>php -S</code> workers</td><td>The leak needs a poisoned worker to be reused</td></tr>
+          <tr><td>Front end</td><td>nginx with <code>proxy_http_version 1.1</code></td><td>Serializes the pipelined requests and reconnects to the workers</td></tr>
+          <tr><td>Memory limit</td><td>128 MiB</td><td>The producer must hit the limit, not kill the process</td></tr>
+          <tr><td>Upload progress</td><td><code>session.upload_progress.enabled=On</code></td><td>With it off the producer does not OOM (mutation A)</td></tr>
+          <tr><td>Body size</td><td>Under 1 MiB per request</td><td>Calibration and challenge cap</td></tr>
+          <tr><td>Transport</td><td>Raw HTTP/1.1, keep-alive, pipelining</td><td>Consumers must queue behind the producer</td></tr>
+          <tr><td>Socket ownership</td><td>PHP worker owns the upstream connection</td><td>The command writes its output there</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 5. RESULT ============ -->
+  <section id="result">
+    <div class="sechead">
+      <div class="secno">05</div>
+      <div>
+        <h2>Did it work?</h2>
+        <p class="dek">Yes in the lab. No on the real site. It is a race, not a reliable exploit. The final success came after the unsealing, not in the blind phase.</p>
+      </div>
+    </div>
+
+    <div class="codeblock"><span class="dim">&lt;b&gt;Fatal error&lt;/b&gt;:  Allowed memory size of 134217728 bytes exhausted ...</span>
+<span class="c">6c9f411478b49788</span>
+<span class="dim">uid=0(root) gid=0(root) groups=0(root)</span>
+<span class="g">475939146625902132d3507a85afee3a19483f2ebe9078370bc8f5911f0869bc</span>  <span class="dim">/usr/local/bin/print-flag</span>
+<span class="f">FLAG{task001_php8426_lab_9f3c2a}</span></div>
+    <p class="small">Primary evidence: <code>evidence/run-nginx4/final.response.body</code>. The fatal is expected: it is the last OOM that triggers the cleanup. The nonce, <code>uid</code>, hash, and flag are the execution proof; the flag is synthetic.</p>
+
+    <div class="two" style="margin-top:16px">
+      <div class="panel">
+        <h4>Four verified bodies</h4>
+        <ul>
+          <li><code>run-nginx4</code> — nonce <code>6c9f411478b49788</code></li>
+          <li><code>run-verify-20261026T103257Z-2</code> — <code>29b2878a6f9356b5</code></li>
+          <li><code>run-verify-extra-success-…</code> — <code>dc4630df4a1cabb8</code></li>
+          <li><code>run-verify-20261026T103741Z-1</code> — <code>91f5eefe641036e3</code></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>What the scan cannot see</h4>
+        <ul>
+          <li>the exact Alpine build, <code>0x112930</code></li>
+          <li><code>session.upload_progress</code></li>
+          <li>the four-worker pool</li>
+          <li>the 128 MiB limit</li>
+          <li>the heap</li>
+        </ul>
+        <p style="margin-top:8px">A version header is a candidate; the exploit is the confirmation.</p>
+      </div>
+    </div>
+
+    <h3>The five checks</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Check</th><th>Result</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Static calibration</td><td class="ok">PASS</td><td><code>zval_ptr_dtor=0x712930</code>, low21 <code>0x112930</code></td></tr>
+          <tr><td>Benign baseline</td><td class="ok">PASS</td><td>No OOM, no anomalous cookie, no flag</td></tr>
+          <tr><td>Live attack</td><td class="ok">PASS</td><td>Verified on attempt 2; <code>run-verify-20261026T103741Z-1</code></td></tr>
+          <tr><td>Mutation A — upload progress off</td><td class="ok">PASS</td><td>Attack stops at the producer; baseline still passes</td></tr>
+          <tr><td>Mutation B — broken page</td><td class="ok">PASS</td><td>Baseline correctly fails</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small"><code>verify/VERIFY-REPORT.json</code> sha256 <code>303f6402…</code>; all five true.</p>
+
+    <h3>Key evidence</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Artifact</th><th>sha256</th><th>Shows</th></tr></thead>
+        <tbody>
+          <tr><td><code>run-nginx4/final.response.body</code></td><td><code>0abf54b0…</code></td><td>nonce, <code>uid=0</code>, hash, flag</td></tr>
+          <tr><td><code>run-nginx4/final.json</code></td><td><code>459c02bc…</code></td><td>all three markers true; body/raw hashes</td></tr>
+          <tr><td><code>run-nginx4/heap.json</code></td><td><code>ff0ec078…</code></td><td>heap <code>0x783213000000</code>; one 256-byte cookie</td></tr>
+          <tr><td><code>run-nginx4/code.json</code></td><td><code>f7d510e4…</code></td><td>code <code>0x5b5334112930</code>; low21 <code>0x112930</code></td></tr>
+          <tr><td><code>run-nginx4/ORACLE.txt</code></td><td><code>360a3a3f…</code></td><td>independent image read: flag and hash</td></tr>
+          <tr><td><code>evidence/MANIFEST.sha256</code></td><td><code>8278a7f8…</code></td><td>131 files, 131/131 OK</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="label">The honest part</span>
+      <p><strong>Blind? No.</strong> The blind phase produced the OOM and rejected Apache/direct CLI; the CLI+nginx design came from the unsealed writeup. The final success is a reproduction of the documented lab, not a blind discovery. <strong>Reliable? No.</strong> About 4/10 base attempts here; the writeup reports 7/10; the callback can miss. <strong>Independent? Partially.</strong> The flag/byte oracles are independent of the exploit path; GLM-5.3 agreed on the core but time-boxed C3/C8/C9.</p>
+    </div>
+  </section>
+
+  <!-- ============ 6. SCAN ============ -->
+  <section id="scan">
+    <div class="sechead">
+      <div class="secno">06</div>
+      <div>
+        <h2>The scan, and its checklist.</h2>
+        <p class="dek">A scan reads the sign on the door. An attack tries the lock. The sign can say PHP/8.4.26 and still hide the build; the exact build is only visible after the leak.</p>
+      </div>
+    </div>
+
+    <div class="callout eli5">
+      <span class="label">The five-year-old version</span>
+      <p>Before you knock on a thousand doors, look at the sign. Does it say “PHP 8.4.26”? Is there a little door called <code>php-version.php</code>? That tells you the hotel might have the right clerk. It does <strong>not</strong> tell you the clerk can be tricked. Reading the sign is a scan. Pushing the clerk over is the attack. Do not push a thousand clerks.</p>
+    </div>
+
+    <h3>How to tell whether a site is PHP</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Signal</th><th>Reliability</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><code>X-Powered-By: PHP/8.4.26</code></td><td class="ok">High, if present</td><td>Most direct; absent does not mean no PHP</td></tr>
+          <tr><td><code>Set-Cookie: PHPSESSID</code></td><td class="ok">High</td><td>Default PHP session name; can be renamed</td></tr>
+          <tr><td><code>wp-content</code>, <code>wp-json</code>, <code>wp-admin</code></td><td class="ok">High for WordPress</td><td>WordPress is PHP</td></tr>
+          <tr><td><code>laravel_session</code>, <code>XSRF-TOKEN</code></td><td class="ok">High for Laravel/PHP</td><td>Framework-specific</td></tr>
+          <tr><td><code>ci_session</code></td><td class="ok">High for CodeIgniter</td><td>Framework-specific</td></tr>
+          <tr><td><code>.php</code> in URL</td><td class="mid">Medium</td><td>Routing/frameworks can hide it</td></tr>
+          <tr><td><code>Server: nginx</code> or <code>Apache</code></td><td class="no">None for the language</td><td>That is the web server, not PHP</td></tr>
+          <tr><td><code>Server: PHP 8.4.26 Development Server</code></td><td class="ok">High</td><td>The CLI server is exposed directly</td></tr>
+          <tr><td>PHP error text</td><td class="mid">Medium-high</td><td>Often hidden in production</td></tr>
+          <tr><td><code>X-Debug-Token</code>, <code>Whoops</code></td><td class="mid">Medium-high</td><td>Debug pages leak the stack</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Passive sources for 1,000 scale: HTTP Archive, Wappalyzer, BuiltWith, W3Techs, urlscan.io, Shodan/Censys, Common Crawl. A negative is not proof.</p>
+
+    <h3>Matrix A — what to look for</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Check</th><th>Positive signal</th><th>Confidence</th><th>Next action</th></tr></thead>
+        <tbody>
+          <tr><td>Scope</td><td>The target is in a signed scope</td><td>—</td><td>Stop if not allowed</td></tr>
+          <tr><td>PHP header</td><td><code>X-Powered-By: PHP/8.4.26</code></td><td class="mid">Medium</td><td>Version candidate; check endpoint</td></tr>
+          <tr><td><code>/php-version.php</code></td><td>200; body starts <code>PHP 8.4.26</code></td><td class="ok">Medium-high</td><td>Candidate; lab next</td></tr>
+          <tr><td>Static root</td><td><code>/</code> is HTML; <code>/index.php</code> 404</td><td class="no">Low / negative</td><td>Do not conclude “unexploitable”; try the endpoint</td></tr>
+          <tr><td>Proxy / CDN</td><td><code>Server: nginx</code>, <code>Via</code>, <code>cf-ray</code></td><td class="mid">Medium</td><td>Adjust concurrency; respect rate limits</td></tr>
+          <tr><td>Worker hint</td><td>5× GET; the printed PID varies</td><td class="mid">Medium</td><td>Strengthen candidate</td></tr>
+          <tr><td>Upload hint</td><td>Small multipart → 32-byte <code>PHPSESSID</code></td><td class="mid">Medium</td><td>Candidate; lab next</td></tr>
+          <tr><td>Direct CLI</td><td><code>Server: PHP … Development Server</code></td><td class="mid">Medium</td><td>Different deployment; lab</td></tr>
+          <tr><td>WAF / 429</td><td>403, 429, JS challenge</td><td>—</td><td>Stop; never bypass</td></tr>
+          <tr><td>Exact build</td><td><code>0x112930</code> only via the code leak</td><td class="ok">High only in lab</td><td>Lab, not scan</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Matrix B — how much iteration</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Stage</th><th>Budget</th><th>Stop / backoff</th></tr></thead>
+        <tbody>
+          <tr><td>Baseline GET</td><td>1 request; 1 retry only on timeout/5xx</td><td>No retry on 4xx or a negative</td></tr>
+          <tr><td>Endpoint probe</td><td>1–2 requests</td><td>404 → mark static-only; no exploit</td></tr>
+          <tr><td>PID sample</td><td>5 requests</td><td>Constant PID → lower confidence; no loop</td></tr>
+          <tr><td>Small upload probe</td><td>1 request</td><td>No cookie → lower confidence; never send the 249 KiB producer</td></tr>
+          <tr><td>Lab confirmation (<code>make verify</code>)</td><td>8 attempts</td><td>Restart after a crash; stop on success</td></tr>
+          <tr><td>Authorized production</td><td><strong>1–2 default</strong>; 3–5 only with explicit scope and owner agreement</td><td>Success, target-down, WAF/429, or 3 consecutive same-mode misses → stop</td></tr>
+          <tr><td>Same target, repeated tries</td><td>Use the lab/production budget, not a loop</td><td>Do not blind-retry; re-validate the build/lab first</td></tr>
+          <tr><td>1,000 targets</td><td>3 scan requests each; <strong>no 1,000 exploits</strong></td><td>Scan → dedupe → lab → authorized sample</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>The math</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>p</th><th>1</th><th>2</th><th>3</th><th>5</th><th>8</th></tr></thead>
+        <tbody>
+          <tr><td>0.4 (our lab)</td><td>40%</td><td>64%</td><td>78%</td><td>92%</td><td>98%</td></tr>
+          <tr><td>0.7 (upstream)</td><td>70%</td><td>91%</td><td>97%</td><td>99.8%</td><td>99.99%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Probability of at least one success in <code>n</code> independent attempts: <code>1 − (1 − p)^n</code>. Expected attempts: <code>1/p</code>. The lab uses 8 because it is disposable; production uses 1–2 because the attempt is an OOM and the scope is the limit.</p>
+
+    <h3>1,000 targets: scan vs confirmation</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Phase</th><th>Requests</th><th>Wall time @50</th><th>Egress</th><th>Risk</th></tr></thead>
+        <tbody>
+          <tr><td>Header + endpoint scan</td><td>2–3 each</td><td>~1–3 min</td><td>~10–50 MB</td><td>Low; cents; still needs a scope</td></tr>
+          <tr><td>Light behavior triage</td><td>5–10 each</td><td>~3–8 min</td><td>~50–200 MB</td><td>Low–medium</td></tr>
+          <tr><td>Full exploit, one attempt</td><td>~9 each</td><td>~10–30 min</td><td>~1.6 GB</td><td><strong>High:</strong> 1,000 OOMs/crashes</td></tr>
+          <tr><td>With 3–5 retries</td><td>~27–45 each</td><td>~30–90 min</td><td>~5–8 GB</td><td><strong>High:</strong> one-shot containers, 40–70%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="label">Scan ≠ attack</span>
+      <p>A scan is 2–5 light requests; a confirmation is the 9-request OOM chain. The exact build, upload-progress setting, worker count, and heap are not visible from outside. The version header is a candidate; the lab (<code>make verify</code>) confirms the class; the target confirmation is an authorized exploit or an owner-assisted staging run, not a scan. For 1,000 arbitrary sites: use passive data, not 1,000 live probes; and do not run 1,000 exploit attempts. Authorization is the gate.</p>
+    </div>
+
+    <h3>The legal frame (not legal advice)</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Factor</th><th>Lower risk</th><th>Higher risk</th></tr></thead>
+        <tbody>
+          <tr><td>Authorization</td><td>Own assets, signed scope, listed bug bounty</td><td>“Arbitrary” sites; no scope; ignoring a <code>security.txt</code></td></tr>
+          <tr><td>Method</td><td>One GET; browser-like request</td><td>Auth bypass, injection payloads, exploit bodies, WAF/rate-limit bypass</td></tr>
+          <tr><td>Impact</td><td>No state change; no load</td><td>OOM, crash, account lockout, data collection</td></tr>
+          <tr><td>Notice</td><td>Respects <code>robots.txt</code>, ToS, <code>429</code>/<code>Retry-After</code></td><td>Ignores blocks, rotates IPs, hides identity</td></tr>
+          <tr><td>Data</td><td>No personal data</td><td>Personal data → GDPR/CCPA etc.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Jurisdictions differ (US CFAA, EU Directive 2013/40/EU, UK CMA 1990, Australia/Canada analogues). Public does not mean authorized. Own assets, a scope, or a bug bounty are the safe path.</p>
+  </section>
+
+  <!-- ============ 7. TWEETS ============ -->
+  <section id="tweets">
+    <div class="sechead">
+      <div class="secno">07</div>
+      <div>
+        <h2>The internet arguments.</h2>
+        <p class="dek">Two tweets, one shared fact, two different conclusions. The static page was a real deployment mistake; it is not proof that the bug is unexploitable or that the challenge was bad-faith.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Claim</th><th>Verdict</th><th>Correction</th></tr></thead>
+        <tbody>
+          <tr><td>“nginx → PHP CLI server”</td><td class="ok">Correct</td><td>Matches the writeup, `decisions/0002`, and the lab.</td></tr>
+          <tr><td>“Static <code>index.html</code> without a router never initializes PHP, so the parser is unreachable”</td><td class="ok">Correct</td><td>PHP 8.4.26 <code>php_cli_server_dispatch</code>: a non-<code>.php</code> extension sets <code>is_static_file=1</code>; <code>request_startup()</code> only if <code>server-&gt;router || !is_static_file</code>.</td></tr>
+          <tr><td>“Single-threaded development server”</td><td class="mid">Imprecise</td><td>Four workers (<code>PHP_CLI_SERVER_WORKERS=4</code>); each worker is single-threaded. The leak stages rely on the pool.</td></tr>
+          <tr><td>“Works reliably now”</td><td class="no">Overstated</td><td>7/10 upstream, 4/10 in our lab; a known callback-miss mode. It is a race.</td></tr>
+          <tr><td>“The challenge is unexploitable”</td><td class="no">False for the calibrated deployment</td><td>Four verified bodies; the flag, nonce, <code>uid=0</code>, and hash. It is conditional, not unexploitable.</td></tr>
+          <tr><td>“Intentionally made unexploitable / bad faith”</td><td class="no">Unsupported</td><td>Static page + endpoint update + the WIF admission point to sloppiness/ops error, not malice. The writeup’s own WIF did not derive the prize address.</td></tr>
+          <tr><td>“Under five hours”</td><td class="mid">Unmeasured</td><td>Our lab reached a verified RCE ~26 minutes after repo init, but after the unsealed writeup; the blind phase did not. The live solve time is not in the artifact.</td></tr>
+          <tr><td>“LiveOverflow called it out, then the endpoint was added”</td><td class="mid">Endpoint real; attribution unverified</td><td>The writeup credits LiveOverflow for helping contact the creator, not for a public static-file callout.</td></tr>
+          <tr><td>“The server got DDoSed”</td><td class="mid">Unverified</td><td>The repo has 466 stars/70 forks, so attention is real. A four-worker CLI server is tiny; solver traffic alone could look like a DoS. We did not test the live site.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout good">
+      <span class="label">What is actually true</span>
+      <p>The static-file diagnosis is the strongest part of both tweets. The architecture is nginx → PHP CLI server. The bug is real and exploitable in the calibrated lab. The deployment had a real mistake; the challenge is a PoC for the exploit, not a debunk. The “unexploitable” crowd is wrong; the “AI solved it from nothing” crowd is also overclaiming. The AI reproduced a public PoC after the lab was specified.</p>
+    </div>
+  </section>
+
+  <!-- ============ 8. AGENTS ============ -->
+  <section id="agents">
+    <div class="sechead">
+      <div class="secno">08</div>
+      <div>
+        <h2>Agents and swarms: necessary?</h2>
+        <p class="dek">Not for this execution, and not for this scan. One operator plus one independent verifier is enough. A swarm is for breadth, not for a single racy exploit.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Job</th><th>One agent enough?</th><th>Swarm needed?</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Read the PoC and write hypotheses</td><td>Yes</td><td class="no">No</td><td>One 763-line file; the hypotheses are serial</td></tr>
+          <tr><td>Build the lab</td><td>Yes</td><td class="no">No</td><td>Environment work is one bottleneck at a time</td></tr>
+          <tr><td>Find the right server class</td><td>Yes</td><td class="mid">Maybe</td><td>The Apache/direct-CLI failures were serial hypotheses; small space</td></tr>
+          <tr><td>Run the exploit</td><td>Yes</td><td class="no">No</td><td>One script against four workers; multiple attackers contend and confuse the race</td></tr>
+          <tr><td>Independent verification</td><td class="no">No (producer cannot)</td><td class="ok">One verifier</td><td>A swarm of verifiers adds correlated opinions, not independence</td></tr>
+          <tr><td>Scan the app with the starter stack</td><td>Irrelevant</td><td class="no">No</td><td>The bug is in the PHP runtime, not the app/dependencies</td></tr>
+          <tr><td>Future breadth (many endpoints, fuzzing, hosts)</td><td class="no">No</td><td class="ok">Yes</td><td>That is where parallel workers pay off</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="three" style="margin-top:16px">
+      <div class="panel"><h4>Good at</h4><p>Repetitive evidence checks, reading many files, building the lab, trying alternative hypotheses, writing the handoff.</p></div>
+      <div class="panel"><h4>Bad at</h4><p>Being independent of themselves, resisting a confident wrong hypothesis, and coordinating a race that needs one attacker.</p></div>
+      <div class="panel"><h4>The rule of thumb</h4><p>Use a swarm when the work is parallel and independent; use one operator plus one verifier when the work is a single exploit.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 9. GAPS ============ -->
+  <section id="gaps">
+    <div class="sechead">
+      <div class="secno">09</div>
+      <div>
+        <h2>Honest gaps.</h2>
+        <p class="dek">What is verified, what is partial, and what is not claimed.</p>
+      </div>
+    </div>
+    <div class="two">
+      <div class="panel">
+        <h4>Verified</h4>
+        <ul>
+          <li>Four RCE bodies; the flag, nonce, <code>uid=0</code>, hash.</li>
+          <li>131/131 evidence manifest.</li>
+          <li><code>make verify</code> all five checks.</li>
+          <li>Mutations A and B.</li>
+          <li>The PHP static-file behavior from the source.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>Partial / open</h4>
+        <ul>
+          <li>GLM-5.3 agreed on the core, refuted nothing; C3/C8/C9 time-boxed.</li>
+          <li>Sigma is a response-body surrogate because <code>log_errors=Off</code>; no runtime rule.</li>
+          <li>The starter scanner stack was not run; the bug is the wrong layer.</li>
+          <li>No CVE asserted; no real target; no vendor disclosure.</li>
+          <li>The callback crashes the CLI server parent (<code>Exited 139</code>).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. FILES ============ -->
+  <section id="files">
+    <div class="sechead">
+      <div class="secno">10</div>
+      <div>
+        <h2>Read next.</h2>
+        <p class="dek">The page is the summary; these are the artifacts.</p>
+      </div>
+    </div>
+    <div class="files">
+      <a href="OVERVIEW.md"><span>OVERVIEW.md</span><span>long-form walkthrough</span></a>
+      <a href="SCAN-CHECKLIST.md"><span>SCAN-CHECKLIST.md</span><span>matrices, retry budgets, stop rules</span></a>
+      <a href="TABLES.md"><span>TABLES.md</span><span>all tables in one appendix</span></a>
+      <a href="findings/FINDINGS.md"><span>findings/FINDINGS.md</span><span>F1 RCE, F2 crash</span></a>
+      <a href="RETRO.md"><span>RETRO.md</span><span>what was blind; what was unsealed</span></a>
+      <a href="ORACLES.md"><span>ORACLES.md</span><span>what can say the result is right</span></a>
+      <a href="verify/SKILL.md"><span>verify/SKILL.md</span><span>one-command verification</span></a>
+      <a href="verify/VERIFIER-REPORT.md"><span>verify/VERIFIER-REPORT.md</span><span>the independent review</span></a>
+      <a href="HANDOFF.md"><span>HANDOFF.md</span><span>state and next actions</span></a>
+      <a href="evidence/MANIFEST.sha256"><span>evidence/MANIFEST.sha256</span><span>131/131 evidence hashes</span></a>
+    </div>
+    <p class="small" style="margin-top:16px">The story is a mock. The golden ticket is synthetic. No real guest was disturbed. No commit or push: the operator commits.</p>
+  </section>
+
+  <footer class="foot">
+    <strong>Task 001 · Steal My Bitcoin / PHP 8.4.26</strong><br>
+    Generated 2026-10-26 · Lab only · No real target · No CVE asserted<br>
+    Evidence manifest <code>8278a7f8…</code> · Verify report <code>303f6402…</code> · Four verified bodies<br>
+    <code>summary.html</code> · this page is a summary; the linked files are the record.
+  </footer>
+
+</div>
+</body>
+</html>

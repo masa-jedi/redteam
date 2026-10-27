@@ -1,0 +1,3 @@
+[health] PHP 8.4.26 confirmed
+[abort] RuntimeError: heap: expected one strict address, found 0
+exit=1

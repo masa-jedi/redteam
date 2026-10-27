@@ -1,0 +1,19 @@
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Mon, 26 Oct 2026 10:33:07 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: close
+Host: 127.0.0.1
+X-Powered-By: PHP/8.4.26
+
+14c
+<br />
+<b>Fatal error</b>:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 131072 bytes) in <b>Unknown</b> on line <b>0</b><br />
+29b2878a6f9356b5
+uid=0(root) gid=0(root) groups=0(root)
+475939146625902132d3507a85afee3a19483f2ebe9078370bc8f5911f0869bc  /usr/local/bin/print-flag
+FLAG{task001_php8426_lab_9f3c2a}
+
+0
+
